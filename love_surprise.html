@@ -60,11 +60,22 @@ const box=document.getElementById("loveBox");
 
 function showLove(){
   document.getElementById("message").style.display="block";
-  for(let i=0;i<100;i++){
-    const text=document.createElement("div");
-    text.textContent="I LOVE YOU CUTU ❤️";
-    box.appendChild(text);
+
+  if(!box.dataset.started){
+    box.dataset.started="true";
+    const track=document.createElement("div");
+    track.className="love-track";
+
+    for(let i=0;i<160;i++){
+      const text=document.createElement("div");
+      text.className="love-line";
+      text.textContent="I LOVE YOU CUTU ❤️";
+      track.appendChild(text);
+    }
+
+    box.appendChild(track);
   }
+
   burst();
 }
 
