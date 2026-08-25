@@ -1,1 +1,1976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Rashuuu ❤️</title>
 
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    color:white;
+    font-family:Georgia,"Times New Roman",serif;
+    background:#080208;
+    overflow-x:hidden;
+}
+
+/* ================= BACKGROUND ================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-5;
+
+    background:
+    radial-gradient(
+        circle at 15% 20%,
+        rgba(255,65,145,.22),
+        transparent 30%
+    ),
+    radial-gradient(
+        circle at 85% 75%,
+        rgba(150,65,255,.18),
+        transparent 30%
+    ),
+    linear-gradient(
+        145deg,
+        #070107,
+        #1c0614,
+        #09020d
+    );
+}
+
+#stars{
+    position:fixed;
+    inset:0;
+    z-index:-4;
+    pointer-events:none;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    border-radius:50%;
+    background:white;
+    opacity:.25;
+    animation:twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle{
+    0%,100%{
+        opacity:.15;
+        transform:scale(.7);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.7);
+    }
+}
+
+/* ================= FLOATING HEARTS ================= */
+
+.floating-heart{
+    position:fixed;
+    bottom:-50px;
+    pointer-events:none;
+    z-index:100;
+    animation:heartRise linear forwards;
+    filter:drop-shadow(
+        0 0 10px rgba(255,70,160,.7)
+    );
+}
+
+@keyframes heartRise{
+
+    0%{
+        transform:
+        translateY(0)
+        rotate(0deg)
+        scale(.4);
+
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+        transform:
+        translateY(-115vh)
+        rotate(35deg)
+        scale(1.1);
+
+        opacity:0;
+    }
+}
+
+/* ================= GENERAL ================= */
+
+section{
+    min-height:100vh;
+    padding:90px 6%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.container{
+    max-width:950px;
+    width:100%;
+    margin:auto;
+}
+
+.center{
+    text-align:center;
+}
+
+.label{
+    text-transform:uppercase;
+    letter-spacing:5px;
+    color:#ff91bd;
+    font-size:12px;
+    margin-bottom:20px;
+}
+
+.btn{
+    display:inline-block;
+
+    color:white;
+    text-decoration:none;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    border:1px solid
+    rgba(255,145,190,.35);
+
+    background:
+    rgba(255,255,255,.06);
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    margin-top:25px;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+
+    background:#ff4f9b;
+
+    box-shadow:
+    0 0 35px
+    rgba(255,70,155,.4);
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    text-align:center;
+}
+
+.hero-heart{
+    display:block;
+
+    font-size:80px;
+
+    margin-bottom:25px;
+
+    animation:heartbeat 1.4s infinite;
+
+    filter:
+    drop-shadow(
+        0 0 25px
+        rgba(255,60,140,.8)
+    );
+}
+
+@keyframes heartbeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    20%{
+        transform:scale(1.18);
+    }
+
+    40%{
+        transform:scale(1);
+    }
+
+    60%{
+        transform:scale(1.1);
+    }
+
+    80%{
+        transform:scale(1);
+    }
+}
+
+.hero h1{
+
+    font-size:
+    clamp(
+        65px,
+        14vw,
+        150px
+    );
+
+    line-height:.85;
+
+    background:
+    linear-gradient(
+        90deg,
+        #fff,
+        #ff8fbd,
+        #fff,
+        #ff4e99
+    );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+    animation:
+    textShine 5s linear infinite;
+}
+
+@keyframes textShine{
+
+    to{
+        background-position:300%;
+    }
+}
+
+.hero-text{
+
+    max-width:760px;
+
+    margin:35px auto;
+
+    color:#eadce5;
+
+    font-size:19px;
+
+    line-height:1.9;
+}
+
+/* ================= CHAPTER ================= */
+
+.chapter-card{
+
+    padding:50px;
+
+    border-radius:32px;
+
+    background:
+    rgba(255,255,255,.055);
+
+    border:
+    1px solid
+    rgba(255,145,190,.16);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+    0 25px 80px
+    rgba(0,0,0,.35);
+
+    opacity:0;
+
+    transform:
+    translateY(45px);
+
+    transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+.chapter-card.visible{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+}
+
+.chapter-number{
+
+    color:#ff91bd;
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+    font-size:12px;
+
+    margin-bottom:18px;
+}
+
+.chapter-title{
+
+    font-size:
+    clamp(
+        38px,
+        7vw,
+        70px
+    );
+
+    font-weight:normal;
+
+    margin-bottom:35px;
+
+    color:white;
+}
+
+.chapter-card p{
+
+    color:#eadde5;
+
+    font-size:19px;
+
+    line-height:2.05;
+
+    margin-bottom:25px;
+}
+
+.chapter-card strong{
+
+    color:#ff9bc4;
+
+    font-weight:normal;
+}
+
+.quote{
+
+    margin:35px 0;
+
+    padding:
+    25px;
+
+    border-left:
+    2px solid
+    #ff6fae;
+
+    color:#ffc1d9;
+
+    font-size:23px;
+
+    line-height:1.7;
+
+    font-style:italic;
+}
+
+.next{
+
+    text-align:center;
+
+    margin-top:20px;
+}
+
+/* ================= FINAL ================= */
+
+.final{
+
+    text-align:center;
+}
+
+.final-heart{
+
+    font-size:110px;
+
+    display:block;
+
+    margin-bottom:30px;
+
+    animation:
+    heartbeat 1.3s infinite;
+
+    filter:
+    drop-shadow(
+        0 0 35px
+        rgba(255,70,150,.8)
+    );
+}
+
+.final-title{
+
+    font-size:
+    clamp(
+        50px,
+        9vw,
+        90px
+    );
+
+    color:#ff91bd;
+
+    margin-bottom:35px;
+}
+
+.signature{
+
+    margin-top:50px;
+
+    color:#ff91bd;
+
+    letter-spacing:5px;
+
+    font-size:12px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:650px){
+
+    section{
+        padding:
+        65px 5%;
+    }
+
+    .chapter-card{
+        padding:
+        28px 20px;
+    }
+
+    .chapter-card p{
+        font-size:17px;
+        line-height:1.9;
+    }
+
+    .quote{
+        font-size:20px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<div id="stars"></div>
+
+
+<!-- =====================================================
+                     HERO
+===================================================== -->
+
+<section>
+
+<div class="container center">
+
+    <div class="hero-heart">
+        ❤️
+    </div>
+
+    <div class="label">
+        A little world made specially for
+    </div>
+
+    <h1>
+        Rashuuu
+    </h1>
+
+    <p class="hero-text">
+
+        This isn't just a website.
+
+        <br><br>
+
+        It's a little collection of words,
+        memories and feelings written for
+        one very special person.
+
+        <br><br>
+
+        Fifteen chapters.
+
+        One story.
+
+        And a whole lot of love. ❤️
+
+    </p>
+
+    <a
+        href="#chapter1"
+        class="btn"
+    >
+        Begin Our Story ↓
+    </a>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+                  CHAPTER 1
+===================================================== -->
+
+<section id="chapter1">
+
+<div class="container">
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+Chapter 01
+</div>
+
+<h2 class="chapter-title">
+The Day I Met You 🌸
+</h2>
+
+<p>
+
+I still remember that somewhere around 9th standard,
+I met you without having any idea that you would
+eventually become such a special person in my story.
+Back then everything was simple. School was school,
+days came and went, people came into our lives and
+everyone was busy creating their own little memories.
+
+</p>
+
+<p>
+
+And somewhere inside all of those ordinary days,
+there was you.
+
+I didn't know that meeting you would become one of
+those memories that I would eventually look back on
+and realize was much more important than it seemed
+at the time.
+
+</p>
+
+<p>
+
+That's the strange thing about life.
+
+The moments that change our stories don't always look
+special when they're happening. There isn't always
+music playing in the background or some magical sign
+telling us that we should remember the exact second.
+
+Sometimes an important chapter simply begins with
+a normal day and a normal meeting.
+
+</p>
+
+<div class="quote">
+
+"Some of the most beautiful chapters begin
+without us realizing that the story has started."
+
+</div>
+
+<p>
+
+And if I could go back to that version of myself in
+9th standard, I think I would simply smile and say,
+
+<strong>
+"You have no idea how special this person is going
+to become."
+</strong>
+
+</p>
+
+<div class="next">
+<a href="#chapter2" class="btn">
+Continue →
+</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+                  CHAPTER 2
+===================================================== -->
+
+<section id="chapter2">
+
+<div class="container">
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+Chapter 02
+</div>
+
+<h2 class="chapter-title">
+A Person I Didn't Expect 💗
+</h2>
+
+<p>
+
+There are people we meet and then eventually forget.
+There are people we talk to for a while and then life
+slowly takes everyone in different directions.
+
+And then there are those rare people who somehow
+remain important.
+
+You became one of those people.
+
+</p>
+
+<p>
+
+I can't point to one exact moment and say that was
+when everything changed.
+
+It was more like hundreds of tiny moments slowly
+building something meaningful.
+
+A conversation here.
+
+A laugh there.
+
+A random memory.
+
+A simple interaction.
+
+And before I knew it, your name had started carrying
+a completely different feeling.
+
+</p>
+
+<p>
+
+You didn't have to force yourself into an important
+place in my life.
+
+You simply became important naturally.
+
+And honestly, I think that makes it even more special.
+
+</p>
+
+<div class="quote">
+
+"You didn't arrive with a warning.
+
+You simply became someone I couldn't imagine
+my story without."
+
+</div>
+
+<div class="next">
+<a href="#chapter3" class="btn">
+Continue →
+</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+                  CHAPTER 3
+===================================================== -->
+
+<section id="chapter3">
+
+<div class="container">
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+Chapter 03
+</div>
+
+<h2 class="chapter-title">
+Your Adorable Side 🎀
+</h2>
+
+<p>
+
+Rashuuu, there is something genuinely adorable
+about you.
+
+And when I call you adorable, I don't mean it as
+just another compliment.
+
+I mean the little things.
+
+The expressions.
+
+The way you react.
+
+The way you talk.
+
+The little moments when you don't even realize
+how cute you are.
+
+</p>
+
+<p>
+
+Sometimes the sweetest qualities are the ones people
+don't notice in themselves.
+
+You can simply be sitting there, talking normally,
+and somehow there will be some tiny expression or
+reaction that makes you ridiculously adorable.
+
+</p>
+
+<p>
+
+And I hope you never feel like you need to change
+those little parts of yourself.
+
+The world can sometimes make people feel like they
+have to become different to fit in.
+
+But the things that make you naturally yourself are
+exactly the things that make you memorable.
+
+</p>
+
+<div class="quote">
+
+"Never lose the little things that make you,
+you."
+
+</div>
+
+<div class="next">
+<a href="#chapter4" class="btn">
+Continue →
+</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+                  CHAPTER 4
+===================================================== -->
+
+<section id="chapter4">
+
+<div class="container">
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+Chapter 04
+</div>
+
+<h2 class="chapter-title">
+The Way You Make Me Smile ✨
+</h2>
+
+<p>
+
+Some people make you smile because they tell jokes.
+
+Some make you smile because they know exactly what
+to say.
+
+And then there are people who can make you smile
+simply because they exist in your life.
+
+You're a little like that.
+
+</p>
+
+<p>
+
+Sometimes I don't even need a huge conversation.
+
+A small message.
+
+A familiar name appearing on my screen.
+
+A random memory.
+
+Something reminding me of you.
+
+And suddenly an ordinary day can feel a little
+better.
+
+</p>
+
+<p>
+
+That's a difficult kind of connection to explain
+because it isn't about one specific thing.
+
+It's about the feeling attached to a person.
+
+It's about knowing that somewhere in this huge world,
+there is someone whose presence has become connected
+to so many good memories.
+
+</p>
+
+<p>
+
+And if this website makes you smile even once,
+then every word written here was worth it.
+
+</p>
+
+<div class="next">
+<a href="#chapter5" class="btn">
+Continue →
+</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+                  CHAPTER 5
+===================================================== -->
+
+<section id="chapter5">
+
+<div class="container">
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+Chapter 05
+</div>
+
+<h2 class="chapter-title">
+The Little Things 🌷
+</h2>
+
+<p>
+
+People often remember the biggest events.
+
+But honestly, I think the smallest things are often
+the memories that stay with us the longest.
+
+A random conversation.
+
+A silly moment.
+
+A particular expression.
+
+A message that arrived at exactly the right time.
+
+A laugh that happened for absolutely no important
+reason.
+
+</p>
+
+<p>
+
+Those moments may look insignificant from the outside,
+but memories don't really work that way.
+
+They collect tiny pieces of our lives and slowly turn
+them into something meaningful.
+
+</p>
+
+<p>
+
+When I think about you, I don't only think about one
+huge moment.
+
+I think about all those small pieces.
+
+All those ordinary things that somehow became special
+because you were part of them.
+
+</p>
+
+<div class="quote">
+
+"The little moments are often the ones that become
+the biggest memories."
+
+</div>
+
+<div class="next">
+<a href="#chapter6" class="btn">
+Continue →
+</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+                  CHAPTER 6
+===================================================== -->
+
+<section id="chapter6">
+
+<div class="container">
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+Chapter 06
+</div>
+
+<h2 class="chapter-title">
+Your Beautiful Heart 🫶
+</h2>
+
+<p>
+
+There is a difference between simply looking beautiful
+and being beautiful as a person.
+
+Real beauty shows up in the way someone treats people.
+
+In kindness.
+
+In the way someone listens.
+
+In the way they care.
+
+In the way they can make someone feel comfortable
+without even trying.
+
+</p>
+
+<p>
+
+That's something I genuinely admire about you.
+
+There is a softness in your personality that makes
+you memorable.
+
+Your kindness.
+
+Your innocent little ways.
+
+Your ability to simply be yourself.
+
+Those are things that can't be copied.
+
+</p>
+
+<p>
+
+And I hope you always remember that your value isn't
+decided by one bad day, someone else's opinion or
+one moment when you don't feel confident.
+
+You are allowed to simply be yourself.
+
+</p>
+
+<div class="quote">
+
+"Your heart is one of the most beautiful things
+about you."
+
+</div>
+
+<div class="next">
+<a href="#chapter7" class="btn">
+Continue →
+</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+                  CHAPTER 7
+===================================================== -->
+
+<section id="chapter7">
+
+<div class="container">
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+Chapter 07
+</div>
+
+<h2 class="chapter-title">
+The Memories We Made 🌙
+</h2>
+
+<p>
+
+Every meaningful connection eventually becomes a
+collection of memories.
+
+Some memories are loud.
+
+Some are unforgettable.
+
+And some are so quiet that you only remember them
+when something unexpectedly reminds you.
+
+</p>
+
+<p>
+
+When I think about our story, I don't want to measure
+it by how many days have passed.
+
+I want to remember it by how many moments actually
+meant something.
+
+The laughter.
+
+The conversations.
+
+The random moments.
+
+The little things that only make sense because
+we were there.
+
+</p>
+
+<p>
+
+Maybe years from now we won't remember every exact
+conversation.
+
+But I hope we remember the feeling.
+
+The happiness.
+
+The comfort.
+
+The memories.
+
+And the fact that we were part of each other's
+story during those days.
+
+</p>
+
+<div class="next">
+<a href="#chapter8" class="btn">
+Continue →
+</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+                  CHAPTER 8
+===================================================== -->
+
+<section id="chapter8">
+
+<div class="container">
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+Chapter 08
+</div>
+
+<h2 class="chapter-title">
+When I Miss You 🌙
+</h2>
+
+<p>
+
+Missing someone doesn't always arrive dramatically.
+
+Sometimes it is simply a random moment when you wish
+you could talk to them.
+
+Sometimes you see something funny and immediately
+think they would laugh at it.
+
+Sometimes you hear something familiar and suddenly
+remember them.
+
+</p>
+
+<p>
+
+That's what missing someone can feel like.
+
+Not necessarily a huge empty space.
+
+Sometimes it's just noticing that a familiar part
+of your day isn't there.
+
+And when someone becomes important, even their absence
+can remind you how much their presence means.
+
+</p>
+
+<p>
+
+So even on days when life becomes busy, conversations
+become shorter or everyone gets caught up in their own
+world, I hope you remember that silence doesn't erase
+the memories that already exist.
+
+</p>
+
+<div class="quote">
+
+"Sometimes missing someone is simply your heart
+remembering their presence."
+
+</div>
+
+<div class="next">
+<a href="#chapter9" class="btn">
+Continue →
+</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+                  CHAPTER 9
+===================================================== -->
+
+<section id="chapter9">
+
+<div class="container">
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+Chapter 09
+</div>
+
+<h2 class="chapter-title">
+Things I Don't Always Say 💌
+</h2>
+
+<p>
+
+There are some things that are surprisingly difficult
+to say out loud.
+
+You can know exactly what you feel and still struggle
+to turn it into a sentence.
+
+Sometimes words feel too small for the amount of
+appreciation you have for someone.
+
+That's why I wanted to write everything here.
+
+</p>
+
+<p>
+
+I don't always say how much I appreciate your presence.
+
+I don't always say how much I value the memories we
+have.
+
+I don't always explain how a simple conversation with
+you can make an ordinary day better.
+
+</p>
+
+<p>
+
+But not saying something doesn't mean the feeling
+isn't there.
+
+Sometimes it simply means I haven't found the right
+words yet.
+
+</p>
+
+<p>
+
+So this chapter is me trying.
+
+Not trying to make everything sound perfect.
+
+Just trying to be honest.
+
+<strong>
+You matter to me.
+
+Your happiness matters to me.
+
+And I genuinely hope life gives you countless reasons
+to smile.
+</strong>
+
+</p>
+
+<div class="next">
+<a href="#chapter10" class="btn">
+Continue →
+</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+                  CHAPTER 10
+===================================================== -->
+
+<section id="chapter10">
+
+<div class="container">
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+Chapter 10
+</div>
+
+<h2 class="chapter-title">
+Why You're Different 💫
+</h2>
+
+<p>
+
+There are millions of people in the world.
+
+And yet only a small number become genuinely memorable
+to us.
+
+What makes someone different isn't always one
+extraordinary quality.
+
+Sometimes it's a combination of hundreds of little
+things.
+
+</p>
+
+<p>
+
+For me, that's you.
+
+Your personality.
+
+Your expressions.
+
+Your kindness.
+
+Your adorable side.
+
+Your memories.
+
+Everything together creates something that is
+completely your own.
+
+</p>
+
+<p>
+
+I don't need to compare you to anyone to explain
+why you're special.
+
+You are special because you're you.
+
+And that's more than enough.
+
+</p>
+
+<div class="quote">
+
+"You don't have to be like anyone else to be
+unforgettable."
+
+</div>
+
+<div class="next">
+<a href="#chapter11" class="btn">
+Continue →
+</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+                  CHAPTER 11
+===================================================== -->
+
+<section id="chapter11">
+
+<div class="container">
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+Chapter 11
+</div>
+
+<h2 class="chapter-title">
+If I Could Describe You 🌸
+</h2>
+
+<p>
+
+If I tried to describe you using only one word,
+I would fail.
+
+One word can't hold someone's personality,
+memories, expressions, kindness, laughter and
+all the tiny details that make them recognizable.
+
+</p>
+
+<p>
+
+So instead, I would describe you through feelings.
+
+You feel familiar.
+
+You feel memorable.
+
+You feel like someone whose name can instantly
+bring a collection of memories into my mind.
+
+</p>
+
+<p>
+
+I would describe your smile as one of those little
+things that can make an ordinary moment brighter.
+
+I would describe your personality as a mixture of
+softness and strength.
+
+I would describe your adorable side as something
+that appears naturally.
+
+And I would describe your heart as one of the things
+I genuinely respect about you.
+
+</p>
+
+<p>
+
+But even after writing all of that, I would still
+feel like something was missing.
+
+Maybe that's because people aren't descriptions.
+
+They are experiences.
+
+And knowing you has been an experience I am genuinely
+grateful for.
+
+</p>
+
+<div class="next">
+<a href="#chapter12" class="btn">
+Continue →
+</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+                  CHAPTER 12
+===================================================== -->
+
+<section id="chapter12">
+
+<div class="container">
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+Chapter 12
+</div>
+
+<h2 class="chapter-title">
+A Thousand Thank Yous 🤍
+</h2>
+
+<p>
+
+Thank you for the conversations.
+
+Thank you for the laughter.
+
+Thank you for every small memory that became bigger
+simply because you were part of it.
+
+Thank you for the moments when your presence made
+an ordinary day feel a little less ordinary.
+
+</p>
+
+<p>
+
+Thank you for being yourself instead of trying to
+fit into someone else's idea of who you should be.
+
+Thank you for every time you shared a thought,
+a feeling, a joke or some random part of your day.
+
+Those things might seem small, but trust is never
+really small.
+
+</p>
+
+<p>
+
+Every time someone lets us into their world,
+even for a few minutes, they are sharing a little
+piece of themselves.
+
+And I appreciate those pieces.
+
+</p>
+
+<p>
+
+If I could give you one thing in return, I would
+want it to be the certainty that you are appreciated.
+
+Not only on perfect days.
+
+But on normal days too.
+
+</p>
+
+<div class="next">
+<a href="#chapter13" class="btn">
+Continue →
+</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+                  CHAPTER 13
+===================================================== -->
+
+<section id="chapter13">
+
+<div class="container">
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+Chapter 13
+</div>
+
+<h2 class="chapter-title">
+My Favourite Person 🥰
+</h2>
+
+<p>
+
+Being someone's favourite person isn't about putting
+them above the entire world every second.
+
+It's about having a special place for them in your
+heart that nobody else occupies in exactly the same
+way.
+
+</p>
+
+<p>
+
+It's having a name that feels familiar.
+
+A person you can think about randomly.
+
+Memories that immediately make you smile.
+
+Someone whose presence feels different.
+
+</p>
+
+<p>
+
+That's what you have become for me.
+
+Someone whose name carries a story.
+
+Someone whose little habits are recognizable.
+
+Someone who can turn an ordinary conversation into
+a memory.
+
+</p>
+
+<p>
+
+I hope you never underestimate how valuable it is
+to be a genuinely good person.
+
+The world has enough noise already.
+
+People who bring warmth, kindness and happiness into
+someone else's life are rare.
+
+And I am genuinely grateful that our paths crossed.
+
+</p>
+
+<div class="next">
+<a href="#chapter14" class="btn">
+Continue →
+</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+                  CHAPTER 14
+===================================================== -->
+
+<section id="chapter14">
+
+<div class="container">
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+Chapter 14
+</div>
+
+<h2 class="chapter-title">
+A Letter From My Heart ❤️
+</h2>
+
+<p>
+
+Rashuuu, if you have reached this chapter, then
+you've already read a lot of words about yourself.
+
+But honestly, there is still more I could say.
+
+I could write another ten chapters and probably
+still find new little things to mention.
+
+That's because a person isn't just one memory or
+one personality trait.
+
+A person is every version of themselves that we
+get to know over time.
+
+</p>
+
+<p>
+
+I remember that we met back in 9th standard.
+
+But when I think about the story now, I don't only
+see that beginning.
+
+I see all the little moments that came afterward.
+
+I see the person you became.
+
+I see the memories that collected themselves along
+the way.
+
+And I see the way your name slowly became connected
+to so many feelings.
+
+</p>
+
+<p>
+
+I want you to know that you don't have to be perfect.
+
+You don't have to smile every day.
+
+You don't have to have everything figured out.
+
+You're allowed to have difficult days.
+
+You're allowed to have confusing days.
+
+You're allowed to simply do nothing sometimes.
+
+None of those things make you less wonderful.
+
+</p>
+
+<p>
+
+What matters to me is the real you.
+
+The person behind the perfect moments.
+
+The person who laughs.
+
+The person who gets annoyed.
+
+The person who gets excited.
+
+The person who makes mistakes.
+
+The person who learns.
+
+The person who dreams.
+
+The person who keeps moving forward.
+
+</p>
+
+<div class="quote">
+
+"If I could keep one thing from this whole story,
+it would be the memories of you being completely
+yourself."
+
+</div>
+
+<p>
+
+So this is my long way of saying something very
+simple.
+
+<strong>
+I am genuinely glad you exist in my story.
+
+I am glad our paths crossed.
+
+And I hope you always remember that there was a
+chapter of your life where someone looked at your
+existence and thought,
+
+'I am really lucky to know her.'
+</strong>
+
+</p>
+
+<div class="next">
+<a href="#chapter15" class="btn">
+One Last Chapter →
+</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+                  CHAPTER 15
+===================================================== -->
+
+<section id="chapter15">
+
+<div class="container">
+
+<div class="chapter-card final">
+
+<div class="final-heart">
+❤️
+</div>
+
+<div class="chapter-number">
+Chapter 15 • The Final Chapter
+</div>
+
+<h2 class="final-title">
+For Rashuuu
+</h2>
+
+<p>
+
+This isn't really the ending.
+
+It's just the last page of the little website I made
+for you.
+
+Because stories about people we care about don't
+actually end when the page ends.
+
+They continue in memories.
+
+In conversations.
+
+In random thoughts.
+
+And in all the future moments that haven't happened
+yet.
+
+</p>
+
+<p>
+
+Rashuuu, from that beginning in 9th standard to
+everything that came afterward, I am simply grateful
+that I got to know you.
+
+You are cute.
+
+You are adorable.
+
+You are kind.
+
+You are memorable.
+
+And you are completely yourself.
+
+</p>
+
+<p>
+
+I hope whenever you look back at this little website,
+you don't only remember the words.
+
+I hope you remember the feeling behind them.
+
+Someone wanted to make you smile badly enough to turn
+all these thoughts into fifteen chapters.
+
+</p>
+
+<div class="quote">
+
+"If this entire website had to be reduced to one
+sentence, it would be this:
+
+I'm really, genuinely glad I met you, Rashuuu. ❤️"
+
+</div>
+
+<p>
+
+Keep smiling.
+
+Keep being the adorable person you are.
+
+Keep making memories.
+
+And whenever life feels too busy or too difficult,
+remember that somewhere in your story there is this
+tiny digital corner that was made simply to remind
+you how special you can be to someone.
+
+</p>
+
+<p>
+
+<strong>
+Thank you for being a beautiful part of my story.
+</strong>
+
+</p>
+
+<div class="signature">
+MADE WITH ❤️ FOR RASHUUU
+</div>
+
+<br>
+
+<a
+    href="#home"
+    class="btn"
+>
+Read It Again ↑
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<script>
+
+/* ================= STARS ================= */
+
+const stars =
+document.getElementById("stars");
+
+for(let i=0;i<120;i++){
+
+    const star =
+    document.createElement("div");
+
+    star.className="star";
+
+    star.style.left =
+    Math.random()*100+"%";
+
+    star.style.top =
+    Math.random()*100+"%";
+
+    star.style.animationDelay =
+    Math.random()*3+"s";
+
+    stars.appendChild(star);
+}
+
+
+/* ================= FLOATING HEARTS ================= */
+
+const heartSymbols=[
+    "❤️",
+    "💗",
+    "💕",
+    "💖",
+    "💞",
+    "✨"
+];
+
+function createHeart(){
+
+    const heart =
+    document.createElement("div");
+
+    heart.className =
+    "floating-heart";
+
+    heart.textContent =
+    heartSymbols[
+        Math.floor(
+            Math.random()*
+            heartSymbols.length
+        )
+    ];
+
+    heart.style.left =
+    Math.random()*100+"%";
+
+    heart.style.fontSize =
+    (13+Math.random()*25)+"px";
+
+    heart.style.animationDuration =
+    (6+Math.random()*5)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(
+        ()=>heart.remove(),
+        12000
+    );
+}
+
+setInterval(
+    createHeart,
+    800
+);
+
+
+/* ================= CHAPTER ANIMATION ================= */
+
+const chapters =
+document.querySelectorAll(
+    ".chapter-card"
+);
+
+const observer =
+new IntersectionObserver(
+    entries=>{
+
+        entries.forEach(
+            entry=>{
+
+                if(
+                    entry.isIntersecting
+                ){
+
+                    entry.target
+                    .classList
+                    .add("visible");
+
+                }
+
+            }
+        );
+
+    },
+    {
+        threshold:.15
+    }
+);
+
+chapters.forEach(
+    chapter=>
+    observer.observe(chapter)
+);
+
+</script>
+
+</body>
+</html>
