@@ -4,1973 +4,675 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Rashuuu ❤️</title>
-
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    min-height:100vh;
-    color:white;
-    font-family:Georgia,"Times New Roman",serif;
-    background:#080208;
-    overflow-x:hidden;
-}
-
-/* ================= BACKGROUND ================= */
-
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    z-index:-5;
-
-    background:
-    radial-gradient(
-        circle at 15% 20%,
-        rgba(255,65,145,.22),
-        transparent 30%
-    ),
-    radial-gradient(
-        circle at 85% 75%,
-        rgba(150,65,255,.18),
-        transparent 30%
-    ),
-    linear-gradient(
-        145deg,
-        #070107,
-        #1c0614,
-        #09020d
-    );
-}
-
-#stars{
-    position:fixed;
-    inset:0;
-    z-index:-4;
-    pointer-events:none;
-}
-
-.star{
-    position:absolute;
-    width:2px;
-    height:2px;
-    border-radius:50%;
-    background:white;
-    opacity:.25;
-    animation:twinkle 3s infinite ease-in-out;
-}
-
-@keyframes twinkle{
-    0%,100%{
-        opacity:.15;
-        transform:scale(.7);
-    }
-
-    50%{
-        opacity:1;
-        transform:scale(1.7);
-    }
-}
-
-/* ================= FLOATING HEARTS ================= */
-
-.floating-heart{
-    position:fixed;
-    bottom:-50px;
-    pointer-events:none;
-    z-index:100;
-    animation:heartRise linear forwards;
-    filter:drop-shadow(
-        0 0 10px rgba(255,70,160,.7)
-    );
-}
-
-@keyframes heartRise{
-
-    0%{
-        transform:
-        translateY(0)
-        rotate(0deg)
-        scale(.4);
-
-        opacity:0;
-    }
-
-    10%{
-        opacity:1;
-    }
-
-    100%{
-        transform:
-        translateY(-115vh)
-        rotate(35deg)
-        scale(1.1);
-
-        opacity:0;
-    }
-}
-
-/* ================= GENERAL ================= */
-
-section{
-    min-height:100vh;
-    padding:90px 6%;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.container{
-    max-width:950px;
-    width:100%;
-    margin:auto;
-}
-
-.center{
-    text-align:center;
-}
-
-.label{
-    text-transform:uppercase;
-    letter-spacing:5px;
-    color:#ff91bd;
-    font-size:12px;
-    margin-bottom:20px;
-}
-
-.btn{
-    display:inline-block;
-
-    color:white;
-    text-decoration:none;
-
-    padding:15px 30px;
-
-    border-radius:50px;
-
-    border:1px solid
-    rgba(255,145,190,.35);
-
-    background:
-    rgba(255,255,255,.06);
-
-    cursor:pointer;
-
-    transition:.35s;
-
-    margin-top:25px;
-}
-
-.btn:hover{
-    transform:translateY(-5px);
-
-    background:#ff4f9b;
-
-    box-shadow:
-    0 0 35px
-    rgba(255,70,155,.4);
-}
-
-/* ================= HERO ================= */
-
-.hero{
-    text-align:center;
-}
-
-.hero-heart{
-    display:block;
-
-    font-size:80px;
-
-    margin-bottom:25px;
-
-    animation:heartbeat 1.4s infinite;
-
-    filter:
-    drop-shadow(
-        0 0 25px
-        rgba(255,60,140,.8)
-    );
-}
-
-@keyframes heartbeat{
-
-    0%,100%{
-        transform:scale(1);
-    }
-
-    20%{
-        transform:scale(1.18);
-    }
-
-    40%{
-        transform:scale(1);
-    }
-
-    60%{
-        transform:scale(1.1);
-    }
-
-    80%{
-        transform:scale(1);
-    }
-}
-
-.hero h1{
-
-    font-size:
-    clamp(
-        65px,
-        14vw,
-        150px
-    );
-
-    line-height:.85;
-
-    background:
-    linear-gradient(
-        90deg,
-        #fff,
-        #ff8fbd,
-        #fff,
-        #ff4e99
-    );
-
-    background-size:300%;
-
-    -webkit-background-clip:text;
-
-    color:transparent;
-
-    animation:
-    textShine 5s linear infinite;
-}
-
-@keyframes textShine{
-
-    to{
-        background-position:300%;
-    }
-}
-
-.hero-text{
-
-    max-width:760px;
-
-    margin:35px auto;
-
-    color:#eadce5;
-
-    font-size:19px;
-
-    line-height:1.9;
-}
-
-/* ================= CHAPTER ================= */
-
-.chapter-card{
-
-    padding:50px;
-
-    border-radius:32px;
-
-    background:
-    rgba(255,255,255,.055);
-
-    border:
-    1px solid
-    rgba(255,145,190,.16);
-
-    backdrop-filter:blur(18px);
-
-    box-shadow:
-    0 25px 80px
-    rgba(0,0,0,.35);
-
-    opacity:0;
-
-    transform:
-    translateY(45px);
-
-    transition:
-    opacity 1s ease,
-    transform 1s ease;
-}
-
-.chapter-card.visible{
-
-    opacity:1;
-
-    transform:
-    translateY(0);
-}
-
-.chapter-number{
-
-    color:#ff91bd;
-
-    text-transform:uppercase;
-
-    letter-spacing:4px;
-
-    font-size:12px;
-
-    margin-bottom:18px;
-}
-
-.chapter-title{
-
-    font-size:
-    clamp(
-        38px,
-        7vw,
-        70px
-    );
-
-    font-weight:normal;
-
-    margin-bottom:35px;
-
-    color:white;
-}
-
-.chapter-card p{
-
-    color:#eadde5;
-
-    font-size:19px;
-
-    line-height:2.05;
-
-    margin-bottom:25px;
-}
-
-.chapter-card strong{
-
-    color:#ff9bc4;
-
-    font-weight:normal;
-}
-
-.quote{
-
-    margin:35px 0;
-
-    padding:
-    25px;
-
-    border-left:
-    2px solid
-    #ff6fae;
-
-    color:#ffc1d9;
-
-    font-size:23px;
-
-    line-height:1.7;
-
-    font-style:italic;
-}
-
-.next{
-
-    text-align:center;
-
-    margin-top:20px;
-}
-
-/* ================= FINAL ================= */
-
-.final{
-
-    text-align:center;
-}
-
-.final-heart{
-
-    font-size:110px;
-
-    display:block;
-
-    margin-bottom:30px;
-
-    animation:
-    heartbeat 1.3s infinite;
-
-    filter:
-    drop-shadow(
-        0 0 35px
-        rgba(255,70,150,.8)
-    );
-}
-
-.final-title{
-
-    font-size:
-    clamp(
-        50px,
-        9vw,
-        90px
-    );
-
-    color:#ff91bd;
-
-    margin-bottom:35px;
-}
-
-.signature{
-
-    margin-top:50px;
-
-    color:#ff91bd;
-
-    letter-spacing:5px;
-
-    font-size:12px;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:650px){
-
-    section{
-        padding:
-        65px 5%;
-    }
-
-    .chapter-card{
-        padding:
-        28px 20px;
-    }
-
-    .chapter-card p{
-        font-size:17px;
-        line-height:1.9;
-    }
-
-    .quote{
-        font-size:20px;
-    }
-
-}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#080208;color:#fff;font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 15% 20%,rgba(255,70,150,.25),transparent 30%),radial-gradient(circle at 85% 80%,rgba(130,70,255,.2),transparent 30%),linear-gradient(145deg,#070107,#1c0614,#09020d)}
+#stars{position:fixed;inset:0;z-index:-1;pointer-events:none}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:white;animation:twinkle 3s infinite}
+@keyframes twinkle{50%{opacity:.15;transform:scale(1.8)}}
+.heart{position:fixed;bottom:-40px;z-index:10;pointer-events:none;animation:rise linear forwards}
+@keyframes rise{0%{transform:translateY(0) scale(.5);opacity:0}10%{opacity:1}100%{transform:translateY(-115vh) rotate(35deg) scale(1.1);opacity:0}}
+section{min-height:100vh;padding:80px 6%;display:flex;align-items:center;justify-content:center}
+.wrap{max-width:980px;width:100%;margin:auto}
+.hero{text-align:center}
+.heroheart{font-size:90px;display:block;animation:pulse 1.4s infinite}
+@keyframes pulse{50%{transform:scale(1.18)}}
+.label{color:#ff91bd;text-transform:uppercase;letter-spacing:5px;font-size:12px;margin:22px 0}
+h1{font-size:clamp(65px,14vw,145px);background:linear-gradient(90deg,#fff,#ff8fbd,#fff,#ff4e99);background-size:300%;-webkit-background-clip:text;color:transparent;animation:shine 5s linear infinite}
+@keyframes shine{to{background-position:300%}}
+.intro{max-width:760px;margin:30px auto;line-height:1.9;color:#eadce5;font-size:19px}
+.card{padding:45px;border-radius:30px;background:rgba(255,255,255,.055);border:1px solid rgba(255,145,190,.16);backdrop-filter:blur(15px);box-shadow:0 25px 80px rgba(0,0,0,.35);opacity:0;transform:translateY(35px);transition:1s}
+.card.show{opacity:1;transform:none}
+.num{color:#ff91bd;letter-spacing:4px;text-transform:uppercase;font-size:12px;margin-bottom:18px}
+h2{font-size:clamp(38px,7vw,70px);font-weight:normal;margin-bottom:30px}
+p{font-size:19px;line-height:2.05;color:#eadde5;margin-bottom:24px}
+.quote{border-left:2px solid #ff6fae;padding:20px 25px;color:#ffc1d9;font-size:23px;line-height:1.7;font-style:italic;margin:30px 0}
+.btn{display:inline-block;color:white;text-decoration:none;border:1px solid rgba(255,145,190,.35);background:rgba(255,255,255,.06);padding:14px 27px;border-radius:50px;margin-top:18px;transition:.3s}
+.btn:hover{background:#ff4f9b;transform:translateY(-4px)}
+.center{text-align:center}
+@media(max-width:650px){section{padding:60px 5%}.card{padding:28px 20px}p{font-size:17px;line-height:1.9}.quote{font-size:20px}}
 </style>
 </head>
-
-<body>
-
+<body id="top">
 <div id="stars"></div>
-
-
-<!-- =====================================================
-                     HERO
-===================================================== -->
-
-<section>
-
-<div class="container center">
-
-    <div class="hero-heart">
-        ❤️
-    </div>
-
-    <div class="label">
-        A little world made specially for
-    </div>
-
-    <h1>
-        Rashuuu
-    </h1>
-
-    <p class="hero-text">
-
-        This isn't just a website.
-
-        <br><br>
-
-        It's a little collection of words,
-        memories and feelings written for
-        one very special person.
-
-        <br><br>
-
-        Fifteen chapters.
-
-        One story.
-
-        And a whole lot of love. ❤️
-
-    </p>
-
-    <a
-        href="#chapter1"
-        class="btn"
-    >
-        Begin Our Story ↓
-    </a>
-
+<section class="hero">
+<div class="wrap center">
+<span class="heroheart">❤️</span>
+<div class="label">A little world made specially for</div>
+<h1>Rashuuu</h1>
+<p class="intro">Fifty chapters about a beautiful person, the memories we made, the little things that make you adorable, and all the feelings that are sometimes easier to write than say.</p>
+<a class="btn" href="#chapter1">Begin Our Story ↓</a>
 </div>
-
 </section>
-
-
-<!-- =====================================================
-                  CHAPTER 1
-===================================================== -->
 
 <section id="chapter1">
-
-<div class="container">
-
-<div class="chapter-card">
-
-<div class="chapter-number">
-Chapter 01
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 01</div>
+<h2>The Day I Met You 🌸</h2>
+<p>I still remember that somewhere around 9th standard, I met you without knowing how important that meeting would eventually become. At the time it probably looked like an ordinary beginning, just another day in school and another person entering my world. But life has a funny way of hiding its most meaningful moments inside ordinary days. We do not always recognize the beginning of a beautiful chapter while we are living it. Sometimes we only understand its importance when we look back later and realize how much changed after that moment. Meeting you became one of those memories for me. It was the start of a story I never knew I would care about this much.</p>
+<div class="quote">If I could go back to that first chapter, I think I would simply smile at the version of myself who had no idea what was coming next.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter2">Continue →</a></div>
+</article>
 </div>
-
-<h2 class="chapter-title">
-The Day I Met You 🌸
-</h2>
-
-<p>
-
-I still remember that somewhere around 9th standard,
-I met you without having any idea that you would
-eventually become such a special person in my story.
-Back then everything was simple. School was school,
-days came and went, people came into our lives and
-everyone was busy creating their own little memories.
-
-</p>
-
-<p>
-
-And somewhere inside all of those ordinary days,
-there was you.
-
-I didn't know that meeting you would become one of
-those memories that I would eventually look back on
-and realize was much more important than it seemed
-at the time.
-
-</p>
-
-<p>
-
-That's the strange thing about life.
-
-The moments that change our stories don't always look
-special when they're happening. There isn't always
-music playing in the background or some magical sign
-telling us that we should remember the exact second.
-
-Sometimes an important chapter simply begins with
-a normal day and a normal meeting.
-
-</p>
-
-<div class="quote">
-
-"Some of the most beautiful chapters begin
-without us realizing that the story has started."
-
-</div>
-
-<p>
-
-And if I could go back to that version of myself in
-9th standard, I think I would simply smile and say,
-
-<strong>
-"You have no idea how special this person is going
-to become."
-</strong>
-
-</p>
-
-<div class="next">
-<a href="#chapter2" class="btn">
-Continue →
-</a>
-</div>
-
-</div>
-
-</div>
-
 </section>
-
-
-<!-- =====================================================
-                  CHAPTER 2
-===================================================== -->
-
 <section id="chapter2">
-
-<div class="container">
-
-<div class="chapter-card">
-
-<div class="chapter-number">
-Chapter 02
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 02</div>
+<h2>A Person I Didn't Expect 💗</h2>
+<p>There are people we meet and eventually forget, people who remain only as names from an older part of our lives. Then there are people who quietly become important without asking for that place. You became one of those people. It was not one dramatic moment that made you special. It was a collection of conversations, expressions, jokes, memories and tiny details that slowly created a feeling of familiarity. Somewhere along the way, your name started carrying more meaning than I expected.</p>
+<div class="quote">You did not have to force your way into my story. You simply became part of it.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter3">Continue →</a></div>
+</article>
 </div>
-
-<h2 class="chapter-title">
-A Person I Didn't Expect 💗
-</h2>
-
-<p>
-
-There are people we meet and then eventually forget.
-There are people we talk to for a while and then life
-slowly takes everyone in different directions.
-
-And then there are those rare people who somehow
-remain important.
-
-You became one of those people.
-
-</p>
-
-<p>
-
-I can't point to one exact moment and say that was
-when everything changed.
-
-It was more like hundreds of tiny moments slowly
-building something meaningful.
-
-A conversation here.
-
-A laugh there.
-
-A random memory.
-
-A simple interaction.
-
-And before I knew it, your name had started carrying
-a completely different feeling.
-
-</p>
-
-<p>
-
-You didn't have to force yourself into an important
-place in my life.
-
-You simply became important naturally.
-
-And honestly, I think that makes it even more special.
-
-</p>
-
-<div class="quote">
-
-"You didn't arrive with a warning.
-
-You simply became someone I couldn't imagine
-my story without."
-
-</div>
-
-<div class="next">
-<a href="#chapter3" class="btn">
-Continue →
-</a>
-</div>
-
-</div>
-
-</div>
-
 </section>
-
-
-<!-- =====================================================
-                  CHAPTER 3
-===================================================== -->
-
 <section id="chapter3">
-
-<div class="container">
-
-<div class="chapter-card">
-
-<div class="chapter-number">
-Chapter 03
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 03</div>
+<h2>Your Adorable Side 🎀</h2>
+<p>Rashuuu, one thing that can never be ignored about you is how genuinely adorable you can be. And I do not mean adorable only because of appearance. I mean those little reactions, expressions, habits and moments when you are simply being yourself. The sweetest things about someone are often the things they do not even notice in themselves. You can do something completely normal and somehow make it memorable just because it is you doing it. I hope you never feel like you need to lose those soft and innocent parts of yourself just because the world sometimes expects people to become harder.</p>
+<div class="quote">The little things that make you yourself are exactly the things that make you unforgettable.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter4">Continue →</a></div>
+</article>
 </div>
-
-<h2 class="chapter-title">
-Your Adorable Side 🎀
-</h2>
-
-<p>
-
-Rashuuu, there is something genuinely adorable
-about you.
-
-And when I call you adorable, I don't mean it as
-just another compliment.
-
-I mean the little things.
-
-The expressions.
-
-The way you react.
-
-The way you talk.
-
-The little moments when you don't even realize
-how cute you are.
-
-</p>
-
-<p>
-
-Sometimes the sweetest qualities are the ones people
-don't notice in themselves.
-
-You can simply be sitting there, talking normally,
-and somehow there will be some tiny expression or
-reaction that makes you ridiculously adorable.
-
-</p>
-
-<p>
-
-And I hope you never feel like you need to change
-those little parts of yourself.
-
-The world can sometimes make people feel like they
-have to become different to fit in.
-
-But the things that make you naturally yourself are
-exactly the things that make you memorable.
-
-</p>
-
-<div class="quote">
-
-"Never lose the little things that make you,
-you."
-
-</div>
-
-<div class="next">
-<a href="#chapter4" class="btn">
-Continue →
-</a>
-</div>
-
-</div>
-
-</div>
-
 </section>
-
-
-<!-- =====================================================
-                  CHAPTER 4
-===================================================== -->
-
 <section id="chapter4">
-
-<div class="container">
-
-<div class="chapter-card">
-
-<div class="chapter-number">
-Chapter 04
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 04</div>
+<h2>The Way You Make Me Smile ✨</h2>
+<p>Some people make us smile because they say something funny. Some make us smile because they know exactly what to say. And some people can make us smile simply because their name appears on our screen. You became that kind of person for me. A small conversation, a random memory or even something that reminds me of you can change the feeling of an ordinary day. That effect is difficult to explain because it is not about one particular thing. It is about the collection of feelings attached to a person.</p>
+<div class="quote">Sometimes someone's presence becomes a little piece of happiness in your everyday life.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter5">Continue →</a></div>
+</article>
 </div>
-
-<h2 class="chapter-title">
-The Way You Make Me Smile ✨
-</h2>
-
-<p>
-
-Some people make you smile because they tell jokes.
-
-Some make you smile because they know exactly what
-to say.
-
-And then there are people who can make you smile
-simply because they exist in your life.
-
-You're a little like that.
-
-</p>
-
-<p>
-
-Sometimes I don't even need a huge conversation.
-
-A small message.
-
-A familiar name appearing on my screen.
-
-A random memory.
-
-Something reminding me of you.
-
-And suddenly an ordinary day can feel a little
-better.
-
-</p>
-
-<p>
-
-That's a difficult kind of connection to explain
-because it isn't about one specific thing.
-
-It's about the feeling attached to a person.
-
-It's about knowing that somewhere in this huge world,
-there is someone whose presence has become connected
-to so many good memories.
-
-</p>
-
-<p>
-
-And if this website makes you smile even once,
-then every word written here was worth it.
-
-</p>
-
-<div class="next">
-<a href="#chapter5" class="btn">
-Continue →
-</a>
-</div>
-
-</div>
-
-</div>
-
 </section>
-
-
-<!-- =====================================================
-                  CHAPTER 5
-===================================================== -->
-
 <section id="chapter5">
-
-<div class="container">
-
-<div class="chapter-card">
-
-<div class="chapter-number">
-Chapter 05
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 05</div>
+<h2>The Little Things 🌷</h2>
+<p>The biggest memories are not always created by huge events. Sometimes they are made from tiny things: a random conversation, a silly joke, an unexpected laugh, a message at the right moment or an expression that stays in your mind. Those moments can look completely ordinary from the outside, yet they become precious because of who was there. When I think about you, I think about those small pieces too. They are the quiet details that turn a connection into a story.</p>
+<div class="quote">The little moments are often the ones that become the biggest memories.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter6">Continue →</a></div>
+</article>
 </div>
-
-<h2 class="chapter-title">
-The Little Things 🌷
-</h2>
-
-<p>
-
-People often remember the biggest events.
-
-But honestly, I think the smallest things are often
-the memories that stay with us the longest.
-
-A random conversation.
-
-A silly moment.
-
-A particular expression.
-
-A message that arrived at exactly the right time.
-
-A laugh that happened for absolutely no important
-reason.
-
-</p>
-
-<p>
-
-Those moments may look insignificant from the outside,
-but memories don't really work that way.
-
-They collect tiny pieces of our lives and slowly turn
-them into something meaningful.
-
-</p>
-
-<p>
-
-When I think about you, I don't only think about one
-huge moment.
-
-I think about all those small pieces.
-
-All those ordinary things that somehow became special
-because you were part of them.
-
-</p>
-
-<div class="quote">
-
-"The little moments are often the ones that become
-the biggest memories."
-
-</div>
-
-<div class="next">
-<a href="#chapter6" class="btn">
-Continue →
-</a>
-</div>
-
-</div>
-
-</div>
-
 </section>
-
-
-<!-- =====================================================
-                  CHAPTER 6
-===================================================== -->
-
 <section id="chapter6">
-
-<div class="container">
-
-<div class="chapter-card">
-
-<div class="chapter-number">
-Chapter 06
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 06</div>
+<h2>Your Beautiful Heart 🫶</h2>
+<p>Real beauty is not only something people see. It is something people experience when they are around you. It shows in kindness, in patience, in the way someone listens, in the way they treat people and in the little ways they make others feel comfortable. Those are the qualities I appreciate about you. Your personality has a softness that makes you memorable. Your kindness and your natural way of being yourself are worth appreciating because they are part of what makes you who you are.</p>
+<div class="quote">Never forget that the person you are on ordinary days is already worth appreciating.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter7">Continue →</a></div>
+</article>
 </div>
-
-<h2 class="chapter-title">
-Your Beautiful Heart 🫶
-</h2>
-
-<p>
-
-There is a difference between simply looking beautiful
-and being beautiful as a person.
-
-Real beauty shows up in the way someone treats people.
-
-In kindness.
-
-In the way someone listens.
-
-In the way they care.
-
-In the way they can make someone feel comfortable
-without even trying.
-
-</p>
-
-<p>
-
-That's something I genuinely admire about you.
-
-There is a softness in your personality that makes
-you memorable.
-
-Your kindness.
-
-Your innocent little ways.
-
-Your ability to simply be yourself.
-
-Those are things that can't be copied.
-
-</p>
-
-<p>
-
-And I hope you always remember that your value isn't
-decided by one bad day, someone else's opinion or
-one moment when you don't feel confident.
-
-You are allowed to simply be yourself.
-
-</p>
-
-<div class="quote">
-
-"Your heart is one of the most beautiful things
-about you."
-
-</div>
-
-<div class="next">
-<a href="#chapter7" class="btn">
-Continue →
-</a>
-</div>
-
-</div>
-
-</div>
-
 </section>
-
-
-<!-- =====================================================
-                  CHAPTER 7
-===================================================== -->
-
 <section id="chapter7">
-
-<div class="container">
-
-<div class="chapter-card">
-
-<div class="chapter-number">
-Chapter 07
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 07</div>
+<h2>The Memories We Made 🌙</h2>
+<p>Every meaningful connection eventually becomes a collection of memories. Some memories are loud and unforgettable while others are quiet enough that we only remember them when something unexpectedly reminds us. When I think about our story, I do not want to measure it only by time. I want to remember it through moments: conversations, laughter, random situations and all the little experiences that became meaningful simply because we shared them. Even if life changes, those memories remain part of the story.</p>
+<div class="quote">A memory does not have to be huge to be worth keeping.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter8">Continue →</a></div>
+</article>
 </div>
-
-<h2 class="chapter-title">
-The Memories We Made 🌙
-</h2>
-
-<p>
-
-Every meaningful connection eventually becomes a
-collection of memories.
-
-Some memories are loud.
-
-Some are unforgettable.
-
-And some are so quiet that you only remember them
-when something unexpectedly reminds you.
-
-</p>
-
-<p>
-
-When I think about our story, I don't want to measure
-it by how many days have passed.
-
-I want to remember it by how many moments actually
-meant something.
-
-The laughter.
-
-The conversations.
-
-The random moments.
-
-The little things that only make sense because
-we were there.
-
-</p>
-
-<p>
-
-Maybe years from now we won't remember every exact
-conversation.
-
-But I hope we remember the feeling.
-
-The happiness.
-
-The comfort.
-
-The memories.
-
-And the fact that we were part of each other's
-story during those days.
-
-</p>
-
-<div class="next">
-<a href="#chapter8" class="btn">
-Continue →
-</a>
-</div>
-
-</div>
-
-</div>
-
 </section>
-
-
-<!-- =====================================================
-                  CHAPTER 8
-===================================================== -->
-
 <section id="chapter8">
-
-<div class="container">
-
-<div class="chapter-card">
-
-<div class="chapter-number">
-Chapter 08
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 08</div>
+<h2>When I Miss You 🌙</h2>
+<p>Missing someone is not always dramatic. Sometimes it is simply seeing something funny and wishing you could tell them about it. Sometimes it is hearing something familiar and suddenly remembering them. Sometimes it is noticing that a familiar part of your day is not there. That is how I understand missing someone. It is often just your mind quietly noticing the importance of a person's presence. Even when life gets busy, the memories do not disappear.</p>
+<div class="quote">Sometimes missing someone is simply your heart remembering their presence.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter9">Continue →</a></div>
+</article>
 </div>
-
-<h2 class="chapter-title">
-When I Miss You 🌙
-</h2>
-
-<p>
-
-Missing someone doesn't always arrive dramatically.
-
-Sometimes it is simply a random moment when you wish
-you could talk to them.
-
-Sometimes you see something funny and immediately
-think they would laugh at it.
-
-Sometimes you hear something familiar and suddenly
-remember them.
-
-</p>
-
-<p>
-
-That's what missing someone can feel like.
-
-Not necessarily a huge empty space.
-
-Sometimes it's just noticing that a familiar part
-of your day isn't there.
-
-And when someone becomes important, even their absence
-can remind you how much their presence means.
-
-</p>
-
-<p>
-
-So even on days when life becomes busy, conversations
-become shorter or everyone gets caught up in their own
-world, I hope you remember that silence doesn't erase
-the memories that already exist.
-
-</p>
-
-<div class="quote">
-
-"Sometimes missing someone is simply your heart
-remembering their presence."
-
-</div>
-
-<div class="next">
-<a href="#chapter9" class="btn">
-Continue →
-</a>
-</div>
-
-</div>
-
-</div>
-
 </section>
-
-
-<!-- =====================================================
-                  CHAPTER 9
-===================================================== -->
-
 <section id="chapter9">
-
-<div class="container">
-
-<div class="chapter-card">
-
-<div class="chapter-number">
-Chapter 09
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 09</div>
+<h2>Things I Don't Always Say 💌</h2>
+<p>There are feelings that are surprisingly difficult to say out loud. You can know exactly what you feel and still struggle to find words that seem big enough. I do not always say how much I appreciate your presence, how much I value the memories we have or how much a simple conversation can improve an ordinary day. But not saying something does not mean the feeling is not there. Sometimes it simply means I am still trying to find the right words.</p>
+<div class="quote">So this chapter is me trying to say the things that ordinary conversations sometimes leave unsaid.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter10">Continue →</a></div>
+</article>
 </div>
-
-<h2 class="chapter-title">
-Things I Don't Always Say 💌
-</h2>
-
-<p>
-
-There are some things that are surprisingly difficult
-to say out loud.
-
-You can know exactly what you feel and still struggle
-to turn it into a sentence.
-
-Sometimes words feel too small for the amount of
-appreciation you have for someone.
-
-That's why I wanted to write everything here.
-
-</p>
-
-<p>
-
-I don't always say how much I appreciate your presence.
-
-I don't always say how much I value the memories we
-have.
-
-I don't always explain how a simple conversation with
-you can make an ordinary day better.
-
-</p>
-
-<p>
-
-But not saying something doesn't mean the feeling
-isn't there.
-
-Sometimes it simply means I haven't found the right
-words yet.
-
-</p>
-
-<p>
-
-So this chapter is me trying.
-
-Not trying to make everything sound perfect.
-
-Just trying to be honest.
-
-<strong>
-You matter to me.
-
-Your happiness matters to me.
-
-And I genuinely hope life gives you countless reasons
-to smile.
-</strong>
-
-</p>
-
-<div class="next">
-<a href="#chapter10" class="btn">
-Continue →
-</a>
-</div>
-
-</div>
-
-</div>
-
 </section>
-
-
-<!-- =====================================================
-                  CHAPTER 10
-===================================================== -->
-
 <section id="chapter10">
-
-<div class="container">
-
-<div class="chapter-card">
-
-<div class="chapter-number">
-Chapter 10
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 10</div>
+<h2>Why You're Different 💫</h2>
+<p>There are millions of people in the world, yet only a few become genuinely memorable. What makes someone different is not always one extraordinary quality. It can be the combination of hundreds of little things that somehow belong together. Your personality, your expressions, your kindness, your adorable side and the memories connected to you make your place in my story different. I do not need to compare you with anyone else to explain that. You are special because you are yourself.</p>
+<div class="quote">You do not have to be like anyone else to be unforgettable.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter11">Continue →</a></div>
+</article>
 </div>
-
-<h2 class="chapter-title">
-Why You're Different 💫
-</h2>
-
-<p>
-
-There are millions of people in the world.
-
-And yet only a small number become genuinely memorable
-to us.
-
-What makes someone different isn't always one
-extraordinary quality.
-
-Sometimes it's a combination of hundreds of little
-things.
-
-</p>
-
-<p>
-
-For me, that's you.
-
-Your personality.
-
-Your expressions.
-
-Your kindness.
-
-Your adorable side.
-
-Your memories.
-
-Everything together creates something that is
-completely your own.
-
-</p>
-
-<p>
-
-I don't need to compare you to anyone to explain
-why you're special.
-
-You are special because you're you.
-
-And that's more than enough.
-
-</p>
-
-<div class="quote">
-
-"You don't have to be like anyone else to be
-unforgettable."
-
-</div>
-
-<div class="next">
-<a href="#chapter11" class="btn">
-Continue →
-</a>
-</div>
-
-</div>
-
-</div>
-
 </section>
-
-
-<!-- =====================================================
-                  CHAPTER 11
-===================================================== -->
-
 <section id="chapter11">
-
-<div class="container">
-
-<div class="chapter-card">
-
-<div class="chapter-number">
-Chapter 11
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 11</div>
+<h2>If I Could Describe You 🌸</h2>
+<p>If I tried to describe you using only one word, I would fail. One word cannot hold a person's personality, memories, expressions, kindness, laughter and all the tiny details that make them recognizable. So I would describe you through feelings instead. You feel familiar. You feel memorable. You feel like someone whose name can instantly bring a collection of moments into my mind. Even after writing all of that, I would probably still feel that something is missing because people are not descriptions; they are experiences.</p>
+<div class="quote">Knowing you has been an experience I am genuinely grateful for.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter12">Continue →</a></div>
+</article>
 </div>
-
-<h2 class="chapter-title">
-If I Could Describe You 🌸
-</h2>
-
-<p>
-
-If I tried to describe you using only one word,
-I would fail.
-
-One word can't hold someone's personality,
-memories, expressions, kindness, laughter and
-all the tiny details that make them recognizable.
-
-</p>
-
-<p>
-
-So instead, I would describe you through feelings.
-
-You feel familiar.
-
-You feel memorable.
-
-You feel like someone whose name can instantly
-bring a collection of memories into my mind.
-
-</p>
-
-<p>
-
-I would describe your smile as one of those little
-things that can make an ordinary moment brighter.
-
-I would describe your personality as a mixture of
-softness and strength.
-
-I would describe your adorable side as something
-that appears naturally.
-
-And I would describe your heart as one of the things
-I genuinely respect about you.
-
-</p>
-
-<p>
-
-But even after writing all of that, I would still
-feel like something was missing.
-
-Maybe that's because people aren't descriptions.
-
-They are experiences.
-
-And knowing you has been an experience I am genuinely
-grateful for.
-
-</p>
-
-<div class="next">
-<a href="#chapter12" class="btn">
-Continue →
-</a>
-</div>
-
-</div>
-
-</div>
-
 </section>
-
-
-<!-- =====================================================
-                  CHAPTER 12
-===================================================== -->
-
 <section id="chapter12">
-
-<div class="container">
-
-<div class="chapter-card">
-
-<div class="chapter-number">
-Chapter 12
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 12</div>
+<h2>A Thousand Thank Yous 🤍</h2>
+<p>Thank you for the conversations, the laughter, the random moments and the memories. Thank you for every time you shared some small part of your day. Those things can look tiny, but trust and connection are built from tiny things. Thank you for being yourself instead of trying to become someone else's idea of perfect. Thank you for being a person whose presence has created so many good memories. If I could give you one thing in return, it would be the certainty that you are appreciated.</p>
+<div class="quote">You deserve to know that your presence can make a difference simply by being there.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter13">Continue →</a></div>
+</article>
 </div>
-
-<h2 class="chapter-title">
-A Thousand Thank Yous 🤍
-</h2>
-
-<p>
-
-Thank you for the conversations.
-
-Thank you for the laughter.
-
-Thank you for every small memory that became bigger
-simply because you were part of it.
-
-Thank you for the moments when your presence made
-an ordinary day feel a little less ordinary.
-
-</p>
-
-<p>
-
-Thank you for being yourself instead of trying to
-fit into someone else's idea of who you should be.
-
-Thank you for every time you shared a thought,
-a feeling, a joke or some random part of your day.
-
-Those things might seem small, but trust is never
-really small.
-
-</p>
-
-<p>
-
-Every time someone lets us into their world,
-even for a few minutes, they are sharing a little
-piece of themselves.
-
-And I appreciate those pieces.
-
-</p>
-
-<p>
-
-If I could give you one thing in return, I would
-want it to be the certainty that you are appreciated.
-
-Not only on perfect days.
-
-But on normal days too.
-
-</p>
-
-<div class="next">
-<a href="#chapter13" class="btn">
-Continue →
-</a>
-</div>
-
-</div>
-
-</div>
-
 </section>
-
-
-<!-- =====================================================
-                  CHAPTER 13
-===================================================== -->
-
 <section id="chapter13">
-
-<div class="container">
-
-<div class="chapter-card">
-
-<div class="chapter-number">
-Chapter 13
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 13</div>
+<h2>My Favourite Person 🥰</h2>
+<p>Being someone's favourite person is not about comparing them with everyone else. It is about having a special place for them that nobody else occupies in exactly the same way. It is having a name that feels familiar, a person you can think about randomly and memories that can make you smile without warning. That is what you have become for me. Someone whose name carries a story and whose presence has become connected with so many feelings.</p>
+<div class="quote">Some people become favourites simply because our hearts recognize something special in them.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter14">Continue →</a></div>
+</article>
 </div>
-
-<h2 class="chapter-title">
-My Favourite Person 🥰
-</h2>
-
-<p>
-
-Being someone's favourite person isn't about putting
-them above the entire world every second.
-
-It's about having a special place for them in your
-heart that nobody else occupies in exactly the same
-way.
-
-</p>
-
-<p>
-
-It's having a name that feels familiar.
-
-A person you can think about randomly.
-
-Memories that immediately make you smile.
-
-Someone whose presence feels different.
-
-</p>
-
-<p>
-
-That's what you have become for me.
-
-Someone whose name carries a story.
-
-Someone whose little habits are recognizable.
-
-Someone who can turn an ordinary conversation into
-a memory.
-
-</p>
-
-<p>
-
-I hope you never underestimate how valuable it is
-to be a genuinely good person.
-
-The world has enough noise already.
-
-People who bring warmth, kindness and happiness into
-someone else's life are rare.
-
-And I am genuinely grateful that our paths crossed.
-
-</p>
-
-<div class="next">
-<a href="#chapter14" class="btn">
-Continue →
-</a>
-</div>
-
-</div>
-
-</div>
-
 </section>
-
-
-<!-- =====================================================
-                  CHAPTER 14
-===================================================== -->
-
 <section id="chapter14">
-
-<div class="container">
-
-<div class="chapter-card">
-
-<div class="chapter-number">
-Chapter 14
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 14</div>
+<h2>The Way You Are 🌷</h2>
+<p>One of the nicest things about knowing someone is getting to see the person behind the perfect moments. Nobody is happy every day. Nobody has everything figured out. Everyone has complicated days, mistakes, worries and moments when they do not feel like themselves. I hope you always know that you do not have to be perfect to be appreciated. The real you, including all the ordinary and imperfect moments, is the person worth knowing.</p>
+<div class="quote">You never need to become someone else to deserve kindness and appreciation.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter15">Continue →</a></div>
+</article>
 </div>
-
-<h2 class="chapter-title">
-A Letter From My Heart ❤️
-</h2>
-
-<p>
-
-Rashuuu, if you have reached this chapter, then
-you've already read a lot of words about yourself.
-
-But honestly, there is still more I could say.
-
-I could write another ten chapters and probably
-still find new little things to mention.
-
-That's because a person isn't just one memory or
-one personality trait.
-
-A person is every version of themselves that we
-get to know over time.
-
-</p>
-
-<p>
-
-I remember that we met back in 9th standard.
-
-But when I think about the story now, I don't only
-see that beginning.
-
-I see all the little moments that came afterward.
-
-I see the person you became.
-
-I see the memories that collected themselves along
-the way.
-
-And I see the way your name slowly became connected
-to so many feelings.
-
-</p>
-
-<p>
-
-I want you to know that you don't have to be perfect.
-
-You don't have to smile every day.
-
-You don't have to have everything figured out.
-
-You're allowed to have difficult days.
-
-You're allowed to have confusing days.
-
-You're allowed to simply do nothing sometimes.
-
-None of those things make you less wonderful.
-
-</p>
-
-<p>
-
-What matters to me is the real you.
-
-The person behind the perfect moments.
-
-The person who laughs.
-
-The person who gets annoyed.
-
-The person who gets excited.
-
-The person who makes mistakes.
-
-The person who learns.
-
-The person who dreams.
-
-The person who keeps moving forward.
-
-</p>
-
-<div class="quote">
-
-"If I could keep one thing from this whole story,
-it would be the memories of you being completely
-yourself."
-
-</div>
-
-<p>
-
-So this is my long way of saying something very
-simple.
-
-<strong>
-I am genuinely glad you exist in my story.
-
-I am glad our paths crossed.
-
-And I hope you always remember that there was a
-chapter of your life where someone looked at your
-existence and thought,
-
-'I am really lucky to know her.'
-</strong>
-
-</p>
-
-<div class="next">
-<a href="#chapter15" class="btn">
-One Last Chapter →
-</a>
-</div>
-
-</div>
-
-</div>
-
 </section>
-
-
-<!-- =====================================================
-                  CHAPTER 15
-===================================================== -->
-
 <section id="chapter15">
-
-<div class="container">
-
-<div class="chapter-card final">
-
-<div class="final-heart">
-❤️
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 15</div>
+<h2>Your Smile 💕</h2>
+<p>A smile can be such a small thing, yet it can change the entire atmosphere around someone. Your smile is one of those details that makes memories feel warmer. I hope you smile often, not because someone expects you to, but because you genuinely have reasons to. There will always be difficult days, but I hope the good moments eventually become louder than the bad ones. And whenever you smile because of something small, I hope you know that those moments are beautiful too.</p>
+<div class="quote">Some smiles are remembered long after the conversation is forgotten.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter16">Continue →</a></div>
+</article>
 </div>
-
-<div class="chapter-number">
-Chapter 15 • The Final Chapter
-</div>
-
-<h2 class="final-title">
-For Rashuuu
-</h2>
-
-<p>
-
-This isn't really the ending.
-
-It's just the last page of the little website I made
-for you.
-
-Because stories about people we care about don't
-actually end when the page ends.
-
-They continue in memories.
-
-In conversations.
-
-In random thoughts.
-
-And in all the future moments that haven't happened
-yet.
-
-</p>
-
-<p>
-
-Rashuuu, from that beginning in 9th standard to
-everything that came afterward, I am simply grateful
-that I got to know you.
-
-You are cute.
-
-You are adorable.
-
-You are kind.
-
-You are memorable.
-
-And you are completely yourself.
-
-</p>
-
-<p>
-
-I hope whenever you look back at this little website,
-you don't only remember the words.
-
-I hope you remember the feeling behind them.
-
-Someone wanted to make you smile badly enough to turn
-all these thoughts into fifteen chapters.
-
-</p>
-
-<div class="quote">
-
-"If this entire website had to be reduced to one
-sentence, it would be this:
-
-I'm really, genuinely glad I met you, Rashuuu. ❤️"
-
-</div>
-
-<p>
-
-Keep smiling.
-
-Keep being the adorable person you are.
-
-Keep making memories.
-
-And whenever life feels too busy or too difficult,
-remember that somewhere in your story there is this
-tiny digital corner that was made simply to remind
-you how special you can be to someone.
-
-</p>
-
-<p>
-
-<strong>
-Thank you for being a beautiful part of my story.
-</strong>
-
-</p>
-
-<div class="signature">
-MADE WITH ❤️ FOR RASHUUU
-</div>
-
-<br>
-
-<a
-    href="#home"
-    class="btn"
->
-Read It Again ↑
-</a>
-
-</div>
-
-</div>
-
 </section>
-
-
+<section id="chapter16">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 16</div>
+<h2>The Random Moments ✨</h2>
+<p>Some of my favourite memories are the ones that were not planned. The random conversations, unexpected jokes, silly situations and moments that happened simply because we were there. Those are the moments that prove a story does not need to be perfectly planned to be beautiful. Sometimes the best parts happen naturally. That is what I appreciate about memories: they do not ask permission before becoming important.</p>
+<div class="quote">The best memories sometimes happen when nobody is trying to create one.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter17">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter17">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 17</div>
+<h2>Conversations I Remember 💌</h2>
+<p>A conversation can last five minutes and still stay in someone's mind for years. It is not always the length that matters; it is what the conversation made you feel. Some conversations make you laugh, some make you think, some make you feel understood and some become memorable simply because of who you were talking to. The conversations I remember with you are pieces of our story, and each one adds another page to everything we have experienced.</p>
+<div class="quote">Sometimes a simple conversation becomes a memory without anyone realizing it at the time.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter18">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter18">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 18</div>
+<h2>Your Kindness 🌸</h2>
+<p>Kindness is one of those qualities that can look small but leave a huge impact. A kind word, a little patience, listening to someone or simply making another person feel comfortable can change their entire day. I admire kindness because it says something about a person's heart. It does not need an audience. It does not need applause. It simply exists because that is who the person chooses to be.</p>
+<div class="quote">Never underestimate how much good a genuinely kind person can bring into another person's life.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter19">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter19">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 19</div>
+<h2>Your Innocent Side 🎀</h2>
+<p>There is something especially sweet about the innocent little moments when you are completely unfiltered and simply yourself. Those moments can be funny, cute and memorable at the same time. They are the moments where there is no performance, no attempt to impress anyone and no need to pretend. They are just you. And honestly, those are often the moments people remember most because they feel real.</p>
+<div class="quote">The most adorable version of you is the one that does not even realize how adorable she is.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter20">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter20">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 20</div>
+<h2>What I Admire About You 🫶</h2>
+<p>There are many things I could list, but what I admire most is the combination of qualities that makes you unique. Your kindness, your personality, your adorable side, your ability to make memories out of ordinary moments and the way you remain yourself all matter. Admiration does not always come from one huge quality. Sometimes it comes from noticing dozens of small qualities and realizing that together they create someone genuinely special.</p>
+<div class="quote">The more little things you notice about someone, the more you realize how unique they are.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter21">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter21">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 21</div>
+<h2>Why You Matter ❤️</h2>
+<p>You matter because your presence has meaning. You matter because you have created memories that would not exist without you. You matter because your laughter, your conversations and your personality have become connected to moments I value. And you matter simply because every person deserves to know that their existence has touched someone else's life in a positive way. I hope you never forget that.</p>
+<div class="quote">You do not have to do something extraordinary to matter to someone.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter22">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter22">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 22</div>
+<h2>The Comfort You Bring 🌙</h2>
+<p>There are people whose presence feels comfortable even when nothing special is happening. You do not always need an exciting conversation or a dramatic moment. Sometimes just knowing that a familiar person is there can make things feel a little easier. That kind of comfort is rare because it grows from trust and familiarity. I appreciate that feeling and the memories behind it.</p>
+<div class="quote">Comfort is one of the quietest and most beautiful forms of connection.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter23">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter23">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 23</div>
+<h2>The Memories I Keep ✨</h2>
+<p>Memories are strange. We do not choose which details stay. Sometimes the smallest expression remains while an entire conversation disappears. Sometimes one sentence can bring back an entire day. When I think about the memories connected to you, I do not want to hold onto only the biggest moments. I want to keep the tiny ones too, because they are what make the whole story feel real.</p>
+<div class="quote">The memories worth keeping are often the ones that still make you smile when you remember them.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter24">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter24">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 24</div>
+<h2>The Person Behind The Smile 🌷</h2>
+<p>A smile shows one moment of a person, but there is an entire world behind it. There are dreams, worries, hopes, mistakes, strengths and stories that nobody sees immediately. What makes knowing someone special is slowly discovering those layers. I hope you always feel free to be honest about who you are, not only the version that looks happy in front of everyone else.</p>
+<div class="quote">You are more than one expression, one day or one moment. You are an entire story.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter25">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter25">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 25</div>
+<h2>Things That Remind Me Of You 💗</h2>
+<p>Sometimes people become connected to random things. A song, a place, a word, a joke, a particular time of day or something completely unexpected can suddenly remind you of someone. That is one of the funny things about memories. They create connections everywhere. Once someone becomes important, the world seems to collect little reminders of them.</p>
+<div class="quote">When someone becomes part of your story, even ordinary things can start carrying their memory.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter26">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter26">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 26</div>
+<h2>Your Little Habits 🎀</h2>
+<p>Little habits are some of the easiest things to remember about someone. The way they react, the way they say certain things, the expressions they make or the tiny routines they have. These details may seem insignificant, but they are what make a person recognizable. You do not need a huge personality trait to be memorable. Sometimes a collection of little habits is enough.</p>
+<div class="quote">It is the tiny details that make a person impossible to replace with a description.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter27">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter27">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 27</div>
+<h2>Ordinary Days With You 🌸</h2>
+<p>Not every meaningful day needs to be exciting. Sometimes an ordinary day becomes special simply because the right person is part of it. That is something I appreciate about having memories with you. The story is not made only from big events. It is made from normal days, random conversations and small moments that became meaningful because of the people involved.</p>
+<div class="quote">An ordinary day can become a beautiful memory when shared with someone special.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter28">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter28">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 28</div>
+<h2>How You Changed My Days ✨</h2>
+<p>Some people enter our lives and quietly change the way certain days feel. They give us something to look forward to, someone to talk to or simply another reason to smile. You have done that in your own way. You became part of the background of my memories, and once someone becomes part of that background, their presence starts to feel natural and important at the same time.</p>
+<div class="quote">Sometimes the biggest changes happen quietly.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter29">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter29">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 29</div>
+<h2>When Words Aren't Enough 💌</h2>
+<p>There are feelings that do not fit neatly into sentences. You can write hundreds of words and still feel like the most important part is missing. That is because emotions are not mathematical. They are not measured by word count. Writing this website is simply my attempt to give those feelings a place to exist. If the words are not perfect, I hope the intention behind them is clear.</p>
+<div class="quote">Sometimes the heart understands something long before language finds a way to explain it.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter30">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter30">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 30</div>
+<h2>What Makes You Irreplaceable ❤️</h2>
+<p>Nobody is irreplaceable because they are perfect. People become irreplaceable because of shared history. Nobody else can recreate the exact memories, conversations and moments that two people experienced together. That is why your place in my story is yours alone. It is not about comparing you to anyone. It is about the fact that nobody else can be you in the memories we made.</p>
+<div class="quote">A person becomes irreplaceable when their memories cannot be recreated by anyone else.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter31">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter31">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 31</div>
+<h2>A Letter From My Heart 💌</h2>
+<p>If I tried to put everything I appreciate about you into one letter, I would probably still leave something out. You are not just one memory or one quality. You are all the moments combined: the conversations, the laughs, the little habits, the kindness and the ordinary days that became meaningful. I am grateful that our paths crossed and that I got to know the person behind the name.</p>
+<div class="quote">If I could keep one thing from this entire story, it would be the memories of you being completely yourself.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter32">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter32">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 32</div>
+<h2>If I Could Give You One Thing 🎁</h2>
+<p>If I could give you one thing, I would not choose something expensive or temporary. I would give you the ability to see yourself through the eyes of the people who genuinely appreciate you. I would want you to see your kindness, your adorable side, your strengths and all the little qualities you might overlook. Sometimes we are much kinder to other people than we are to ourselves.</p>
+<div class="quote">I wish you could see how beautiful your ordinary self can be.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter33">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter33">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 33</div>
+<h2>The Happiness You Deserve 🌈</h2>
+<p>You deserve happiness that feels peaceful, genuine and real. You deserve people who respect you, appreciate you and allow you to be yourself. You deserve days that give you reasons to laugh and moments that make you proud of how far you have come. I hope the future gives you many more good memories than difficult ones.</p>
+<div class="quote">I hope life becomes kinder to you in all the ways you deserve.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter34">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter34">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 34</div>
+<h2>Never Change Who You Are 🌸</h2>
+<p>Growing does not mean becoming a completely different person. It means learning, becoming stronger and discovering more about yourself while still protecting the qualities that make you unique. I hope you continue growing without losing your kindness, your softness or the adorable little parts of your personality that make you you.</p>
+<div class="quote">Grow, learn and change when you need to, but never feel pressured to erase yourself.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter35">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter35">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 35</div>
+<h2>Through Good Days ☀️</h2>
+<p>Good days are easy to appreciate while they are happening. Laughter comes naturally, everything feels lighter and the future seems exciting. I hope you have countless days like that. I hope you collect memories that make you laugh years later. And when something wonderful happens, I hope you take a moment to appreciate it instead of rushing past it.</p>
+<div class="quote">Good days deserve to be remembered.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter36">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter36">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 36</div>
+<h2>Through Difficult Days 🌙</h2>
+<p>Not every day will be beautiful, and that is okay. Difficult days do not erase the good parts of your life. They are simply chapters that eventually pass. Whenever life feels heavy, I hope you remember that you are allowed to slow down, rest and take things one step at a time. You do not have to solve everything at once.</p>
+<div class="quote">A difficult chapter is still only one chapter of a much bigger story.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter37">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter37">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 37</div>
+<h2>Everything I Appreciate 💕</h2>
+<p>If I made a list of every little thing I appreciate about you, it would probably become another entire website. I appreciate your personality, your kindness, your expressions, your laughter, your adorable side, your memories and the simple fact that you are yourself. Most importantly, I appreciate the memories that exist because our paths crossed.</p>
+<div class="quote">Sometimes appreciation is simply noticing how many good memories are connected to one person.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter38">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter38">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 38</div>
+<h2>The Story We Started 📖</h2>
+<p>Every story has a beginning, and ours has that memory of 9th standard. We could not have known then where life would take us. That is what makes beginnings beautiful. They do not need certainty. They only need two people crossing paths and creating the possibility of future memories.</p>
+<div class="quote">Every long story begins with a moment that looks ordinary at first.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter39">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter39">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 39</div>
+<h2>My Favourite Memories 🥰</h2>
+<p>My favourite memories are not necessarily the biggest ones. They are the ones that still create a feeling when I remember them. A laugh, a conversation, a random moment or something that happened without planning. Those memories are valuable because they are real. They belong to a specific time in our lives that can never be recreated exactly.</p>
+<div class="quote">Some memories become favourites simply because they still make your heart feel warm.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter40">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter40">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 40</div>
+<h2>If I Could Relive One Day ⏳</h2>
+<p>If I could relive one day, I do not know if I would choose the biggest or most exciting one. I might choose an ordinary day, because ordinary days are the ones we do not realize we will miss until they are gone. I would want to experience the small details again, knowing how valuable they would eventually become.</p>
+<div class="quote">Sometimes the days we want back are the ones we did not realize were special while living them.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter41">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter41">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 41</div>
+<h2>What I Hope You Remember 💌</h2>
+<p>When you eventually look back at this website, I hope you remember more than the animations and words. I hope you remember that someone cared enough to sit down and turn a collection of feelings into a story. I hope you remember the laughter, the memories and the little moments behind the words.</p>
+<div class="quote">Remember the feeling, not just the page.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter42">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter42">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 42</div>
+<h2>A Promise To Always Care ❤️</h2>
+<p>Caring about someone does not have to mean making huge promises about the future. Sometimes it simply means genuinely wishing good things for them. I hope you stay happy, safe, confident and surrounded by people who value you. I hope I can always look back at our memories with gratitude and kindness.</p>
+<div class="quote">Sometimes the most genuine promise is simply to keep caring.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter43">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter43">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 43</div>
+<h2>The Future Chapters 🌅</h2>
+<p>The beautiful thing about a story is that we do not know all of its chapters yet. There are future memories that have not happened, future laughs we have not shared and future ordinary days that may someday become favourites. I do not know what every future chapter will look like, but I hope they contain many reasons for you to smile.</p>
+<div class="quote">The best chapters are often the ones we have not written yet.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter44">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter44">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 44</div>
+<h2>More Memories Waiting For Us ✨</h2>
+<p>There are countless moments ahead that none of us can predict. Some will be ordinary, some exciting, some unexpected and some completely random. I hope life gives you many moments worth remembering. And I hope when you look back someday, this period of your life is remembered with warmth.</p>
+<div class="quote">There are still so many memories waiting to become part of the story.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter45">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter45">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 45</div>
+<h2>If You Ever Doubt Yourself 🌷</h2>
+<p>If you ever have a day when you doubt yourself, remember that one difficult moment cannot define an entire person. You have qualities that are worth appreciating, people who care about you and a future that still has so many possibilities. Be patient with yourself. You do not need to have everything figured out today.</p>
+<div class="quote">You are allowed to be a work in progress and still be wonderful.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter46">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter46">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 46</div>
+<h2>You Are More Special Than You Know 💗</h2>
+<p>Sometimes the people who mean the most to others do not realize how much they matter. They see their own flaws clearly and forget that other people see their kindness, laughter and good qualities too. I hope you remember that your impact is not always visible to you. You may be a beautiful memory in someone's life without even knowing it.</p>
+<div class="quote">You may never fully know how much your presence can mean to someone.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter47">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter47">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 47</div>
+<h2>Thank You For Existing 🤍</h2>
+<p>This chapter is intentionally simple. Thank you for existing. Thank you for being the person you are. Thank you for becoming part of my memories and giving me a reason to write all of this. There are some people we are simply grateful to have met, and you are one of those people for me.</p>
+<div class="quote">Sometimes 'thank you for being here' is enough to say everything.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter48">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter48">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 48</div>
+<h2>Almost The End 🌙</h2>
+<p>We are almost at the final page, but reaching the end of a website does not mean reaching the end of a story. These fifty chapters were simply a way to collect thoughts that might otherwise remain scattered. If even one paragraph made you smile, then this whole project has already done what I wanted it to do.</p>
+<div class="quote">An ending can simply be another way of saying that a chapter is ready to become a memory.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter49">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter49">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 49</div>
+<h2>One Last Letter 💌</h2>
+<p>Rashuuu, I could keep writing for hundreds more chapters because there will always be another memory, another compliment, another little thing to appreciate. But eventually every letter has to reach its final page. So instead of trying to say everything, I will say what matters most: I am genuinely grateful that I met you, grateful for the memories and grateful that your name became such a meaningful part of my story.</p>
+<div class="quote">Some feelings do not need a perfect ending. They only need to be honestly expressed.</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#chapter50">Continue →</a></div>
+</article>
+</div>
+</section>
+<section id="chapter50">
+<div class="wrap">
+<article class="card">
+<div class="num">Chapter 50</div>
+<h2>For Rashuuu — The Story Never Ends ❤️</h2>
+<p>This is the final chapter, but it is not really an ending. It is simply the last page of a little digital world made for you. From that beginning in 9th standard to every memory that came afterward, I am genuinely glad our paths crossed. You are cute, adorable, kind, memorable and completely yourself. I hope you always keep the parts of yourself that make you smile. And whenever you see this page again, remember that someone once cared enough to turn their thoughts into fifty chapters just to make you feel special.</p>
+<div class="quote">I am really, genuinely glad I met you, Rashuuu. ❤️</div>
+<p>Every chapter of a meaningful story is made from many smaller moments. The important part is not perfection but the feeling left behind. I hope this chapter reminds you that the little things matter, that memories deserve to be appreciated, and that being yourself is already enough. Whatever the future brings, I hope you carry the happiest parts of this story with you.</p>
+<div class="center"><a class="btn" href="#top">Read Again ↑</a></div>
+</article>
+</div>
+</section>
 <script>
-
-/* ================= STARS ================= */
-
-const stars =
-document.getElementById("stars");
-
+const stars=document.getElementById("stars");
 for(let i=0;i<120;i++){
-
-    const star =
-    document.createElement("div");
-
-    star.className="star";
-
-    star.style.left =
-    Math.random()*100+"%";
-
-    star.style.top =
-    Math.random()*100+"%";
-
-    star.style.animationDelay =
-    Math.random()*3+"s";
-
-    stars.appendChild(star);
+ const s=document.createElement("span");
+ s.className="star";
+ s.style.left=Math.random()*100+"%";
+ s.style.top=Math.random()*100+"%";
+ s.style.animationDelay=Math.random()*3+"s";
+ stars.appendChild(s);
 }
-
-
-/* ================= FLOATING HEARTS ================= */
-
-const heartSymbols=[
-    "❤️",
-    "💗",
-    "💕",
-    "💖",
-    "💞",
-    "✨"
-];
-
-function createHeart(){
-
-    const heart =
-    document.createElement("div");
-
-    heart.className =
-    "floating-heart";
-
-    heart.textContent =
-    heartSymbols[
-        Math.floor(
-            Math.random()*
-            heartSymbols.length
-        )
-    ];
-
-    heart.style.left =
-    Math.random()*100+"%";
-
-    heart.style.fontSize =
-    (13+Math.random()*25)+"px";
-
-    heart.style.animationDuration =
-    (6+Math.random()*5)+"s";
-
-    document.body.appendChild(heart);
-
-    setTimeout(
-        ()=>heart.remove(),
-        12000
-    );
+const symbols=["❤️","💗","💕","💖","✨","🌸"];
+function heart(){
+ const h=document.createElement("div");
+ h.className="heart";
+ h.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+ h.style.left=Math.random()*100+"%";
+ h.style.fontSize=(13+Math.random()*25)+"px";
+ h.style.animationDuration=(6+Math.random()*5)+"s";
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),12000);
 }
-
-setInterval(
-    createHeart,
-    800
-);
-
-
-/* ================= CHAPTER ANIMATION ================= */
-
-const chapters =
-document.querySelectorAll(
-    ".chapter-card"
-);
-
-const observer =
-new IntersectionObserver(
-    entries=>{
-
-        entries.forEach(
-            entry=>{
-
-                if(
-                    entry.isIntersecting
-                ){
-
-                    entry.target
-                    .classList
-                    .add("visible");
-
-                }
-
-            }
-        );
-
-    },
-    {
-        threshold:.15
-    }
-);
-
-chapters.forEach(
-    chapter=>
-    observer.observe(chapter)
-);
-
+setInterval(heart,800);
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show");});
+},{threshold:.12});
+document.querySelectorAll(".card").forEach(c=>observer.observe(c));
 </script>
-
 </body>
 </html>
