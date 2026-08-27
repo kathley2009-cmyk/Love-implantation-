@@ -4480,11 +4480,14 @@
   </div>
     </section>
 
-    <!-- ================= FINAL SECTION ================= -->
+<!-- ================= FINAL SECTION ================= -->
 
 <footer class="love-footer">
+
   <div class="footer-heart">♡</div>
+
   <h2>200 Chapters. One Beautiful Story. ❤️</h2>
+
   <p>
     Some stories are written with ink.
     <br>
@@ -4493,12 +4496,17 @@
     And some are simply written from the heart.
   </p>
 
-  <button class="replay-btn" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+  <button
+    class="replay-btn"
+    onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
     ↺ Read From The Beginning
   </button>
+
 </footer>
 
-<!-- Floating hearts -->
+
+<!-- ================= FLOATING HEARTS ================= -->
+
 <div class="floating-hearts" aria-hidden="true">
   <span>♡</span>
   <span>♥</span>
@@ -4510,38 +4518,46 @@
   <span>♥</span>
 </div>
 
+
+<!-- ================= CHAPTER ANIMATION ================= -->
+
 <script>
-/* ================= CHAPTER ANIMATION ================= */
 
 const chapters = document.querySelectorAll(".chapter");
 
 const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
+  (entries) => {
+
+    entries.forEach((entry) => {
+
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
       }
+
     });
+
   },
   {
     threshold: 0.12
   }
 );
 
-chapters.forEach(chapter => observer.observe(chapter));
+chapters.forEach((chapter) => {
+  observer.observe(chapter);
+});
 
 
-/* ================= HEART CLICK EFFECT ================= */
+/* ================= CLICK HEART EFFECT ================= */
 
-document.addEventListener("click", function(e) {
+document.addEventListener("click", function (event) {
 
   const heart = document.createElement("span");
 
   heart.className = "click-heart";
   heart.innerHTML = "♥";
 
-  heart.style.left = e.clientX + "px";
-  heart.style.top = e.clientY + "px";
+  heart.style.left = event.clientX + "px";
+  heart.style.top = event.clientY + "px";
 
   document.body.appendChild(heart);
 
@@ -4552,16 +4568,19 @@ document.addEventListener("click", function(e) {
 });
 
 
-/* ================= SMOOTH CHAPTER NAVIGATION ================= */
+/* ================= SMOOTH NAVIGATION ================= */
 
-document.querySelectorAll('a[href^="#"]').forEach(link => {
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
 
-  link.addEventListener("click", function(e) {
+  link.addEventListener("click", function (event) {
 
-    const target = document.querySelector(this.getAttribute("href"));
+    const target = document.querySelector(
+      this.getAttribute("href")
+    );
 
     if (target) {
-      e.preventDefault();
+
+      event.preventDefault();
 
       target.scrollIntoView({
         behavior: "smooth",
@@ -4575,7 +4594,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 });
 
 
-/* ================= PROGRESS BAR ================= */
+/* ================= READING PROGRESS ================= */
 
 const progress = document.createElement("div");
 
@@ -4588,7 +4607,8 @@ window.addEventListener("scroll", () => {
   const scrollTop = window.scrollY;
 
   const documentHeight =
-    document.documentElement.scrollHeight - window.innerHeight;
+    document.documentElement.scrollHeight -
+    window.innerHeight;
 
   const percentage =
     documentHeight > 0
@@ -4599,25 +4619,103 @@ window.addEventListener("scroll", () => {
 
 });
 
-
-/* ================= WELCOME MESSAGE ================= */
-
-window.addEventListener("load", () => {
-
-  document.body.classList.add("page-loaded");
-
-});
 </script>
 
 </body>
 </html>
 
 <style>
-/* ================= CHAPTER EFFECTS ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: linear-gradient(135deg, #fff0f6, #ffe4ec, #fff7fa);
+  color: #4a2430;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+/* ================= MAIN CONTAINER ================= */
+
+.container {
+  width: min(1000px, 92%);
+  margin: auto;
+}
+
+/* ================= WELCOME / HERO ================= */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 850px;
+  animation: heroAppear 1.5s ease forwards;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 8vw, 85px);
+  line-height: 1.1;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.hero h2 {
+  font-size: clamp(22px, 4vw, 38px);
+  font-weight: normal;
+  margin-bottom: 25px;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 18px;
+}
+
+.start-btn {
+  display: inline-block;
+  margin-top: 35px;
+  padding: 15px 32px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 17px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.start-btn:hover {
+  transform: scale(1.08);
+}
+
+/* ================= CHAPTERS ================= */
 
 .chapter {
+  min-height: 100vh;
+  padding: 80px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   opacity: 0;
-  transform: translateY(35px);
+  transform: translateY(40px);
+
   transition:
     opacity 0.9s ease,
     transform 0.9s ease;
@@ -4628,60 +4726,223 @@ window.addEventListener("load", () => {
   transform: translateY(0);
 }
 
+/* ================= CHAPTER CARD ================= */
+
+.card {
+  width: min(900px, 100%);
+  padding: clamp(25px, 5vw, 60px);
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.72);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 20px 60px rgba(100, 30, 50, 0.12);
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* ================= CHAPTER NUMBER ================= */
+
+.number {
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 3px;
+  opacity: 0.6;
+  margin-bottom: 18px;
+}
+
+/* ================= CHAPTER TITLE ================= */
+
+.card h2 {
+  display: block;
+  visibility: visible;
+
+  text-align: center;
+
+  font-size: clamp(28px, 5vw, 46px);
+  line-height: 1.25;
+
+  margin-bottom: 30px;
+
+  font-weight: bold;
+}
+
+/* ================= PARAGRAPHS ================= */
+
+.card p {
+  font-size: 17px;
+  margin-bottom: 25px;
+}
+
+.soft {
+  text-align: center;
+  font-style: italic;
+  margin-top: 30px;
+}
+
+/* ================= QUOTES ================= */
+
+.quote {
+  margin: 35px auto;
+  padding: 25px;
+
+  text-align: center;
+
+  font-size: 21px;
+  font-style: italic;
+
+  border-radius: 20px;
+
+  background: rgba(255, 220, 230, 0.45);
+}
+
+/* ================= NAVIGATION ================= */
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 15px;
+  margin-top: 45px;
+}
+
+.nav {
+  display: inline-block;
+
+  padding: 11px 20px;
+
+  border-radius: 30px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.nav:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 20px rgba(80, 20, 40, 0.15);
+}
+
+/* ================= FINAL CHAPTER ================= */
+
+.final-chapter .card {
+  text-align: center;
+
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.final-chapter h2 {
+  font-size: clamp(32px, 6vw, 55px);
+}
+
+/* ================= FINAL BIG MESSAGE ================= */
+
+.big-message {
+  font-size: clamp(30px, 6vw, 55px);
+
+  font-weight: bold;
+
+  margin: 45px 0;
+
+  line-height: 1.3;
+}
 
 /* ================= FINAL FOOTER ================= */
 
 .love-footer {
   text-align: center;
-  padding: 90px 20px;
-  margin-top: 40px;
+
+  padding: 100px 20px;
+
+  position: relative;
 }
 
 .footer-heart {
   font-size: 70px;
-  animation: heartbeat 1.8s infinite ease-in-out;
+
+  margin-bottom: 20px;
+
+  animation:
+    heartbeat 1.8s infinite ease-in-out;
 }
 
 .love-footer h2 {
-  margin: 15px 0;
+  font-size: clamp(25px, 5vw, 42px);
+
+  margin-bottom: 20px;
 }
 
 .love-footer p {
+  font-size: 17px;
+
   line-height: 1.9;
-  opacity: 0.85;
 }
 
 .replay-btn {
   border: none;
-  padding: 13px 24px;
+
+  padding: 14px 26px;
+
   border-radius: 30px;
-  cursor: pointer;
+
+  font-family: inherit;
+
   font-size: 15px;
-  margin-top: 20px;
-  transition: transform 0.25s ease;
+
+  cursor: pointer;
+
+  margin-top: 25px;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .replay-btn:hover {
   transform: scale(1.06);
-}
 
+  box-shadow:
+    0 8px 25px rgba(80, 20, 40, 0.15);
+}
 
 /* ================= FLOATING HEARTS ================= */
 
 .floating-hearts {
   position: fixed;
+
   inset: 0;
+
   pointer-events: none;
+
   overflow: hidden;
+
   z-index: 2;
 }
 
 .floating-hearts span {
   position: absolute;
-  bottom: -50px;
+
+  bottom: -60px;
+
   font-size: 22px;
+
   opacity: 0;
-  animation: floatHeart 9s linear infinite;
+
+  animation:
+    floatHeart 9s linear infinite;
 }
 
 .floating-hearts span:nth-child(1) {
@@ -4724,68 +4985,55 @@ window.addEventListener("load", () => {
   animation-delay: 7s;
 }
 
-
 /* ================= CLICK HEART ================= */
 
 .click-heart {
   position: fixed;
+
   pointer-events: none;
+
   font-size: 20px;
+
   z-index: 9999;
-  animation: clickHeart 1.2s ease-out forwards;
+
+  animation:
+    clickHeart 1.2s ease-out forwards;
 }
 
-
-/* ================= PROGRESS BAR ================= */
+/* ================= READING PROGRESS ================= */
 
 .reading-progress {
   position: fixed;
+
   top: 0;
   left: 0;
-  width: 0%;
+
   height: 4px;
+
+  width: 0%;
+
   z-index: 10000;
+
   transition: width 0.1s linear;
 }
 
+/* ================= HERO ANIMATION ================= */
 
-/* ================= ANIMATIONS ================= */
+@keyframes heroAppear {
 
-@keyframes floatHeart {
-
-  0% {
-    transform: translateY(0) rotate(0deg);
+  from {
     opacity: 0;
+    transform: translateY(35px);
   }
 
-  15% {
-    opacity: 0.7;
-  }
-
-  85% {
-    opacity: 0.7;
-  }
-
-  100% {
-    transform: translateY(-110vh) rotate(360deg);
-    opacity: 0;
-  }
-
-}
-
-@keyframes clickHeart {
-
-  0% {
-    transform: translate(-50%, -50%) scale(0.5);
+  to {
     opacity: 1;
-  }
-
-  100% {
-    transform: translate(-50%, -140px) scale(1.5);
-    opacity: 0;
+    transform: translateY(0);
   }
 
 }
+
+/* ================= HEARTBEAT ================= */
 
 @keyframes heartbeat {
 
@@ -4800,21 +5048,114 @@ window.addEventListener("load", () => {
 
 }
 
+/* ================= FLOATING HEART ANIMATION ================= */
+
+@keyframes floatHeart {
+
+  0% {
+    transform:
+      translateY(0)
+      rotate(0deg);
+
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.7;
+  }
+
+  85% {
+    opacity: 0.7;
+  }
+
+  100% {
+    transform:
+      translateY(-110vh)
+      rotate(360deg);
+
+    opacity: 0;
+  }
+
+}
+
+/* ================= CLICK HEART ANIMATION ================= */
+
+@keyframes clickHeart {
+
+  0% {
+    transform:
+      translate(-50%, -50%)
+      scale(0.5);
+
+    opacity: 1;
+  }
+
+  100% {
+    transform:
+      translate(-50%, -150px)
+      scale(1.5);
+
+    opacity: 0;
+  }
+
+}
 
 /* ================= MOBILE ================= */
 
 @media (max-width: 600px) {
 
+  .chapter {
+    padding: 45px 14px;
+  }
+
+  .card {
+    padding: 25px 20px;
+
+    border-radius: 22px;
+  }
+
+  .card h2 {
+    font-size: clamp(26px, 8vw, 36px);
+
+    line-height: 1.25;
+  }
+
+  .card p {
+    font-size: 16px;
+
+    line-height: 1.75;
+  }
+
+  .quote {
+    font-size: 18px;
+
+    padding: 20px;
+  }
+
+  .navigation {
+    flex-direction: column;
+  }
+
+  .nav {
+    width: 100%;
+
+    text-align: center;
+  }
+
+  .hero {
+    padding: 30px 18px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
   .love-footer {
     padding: 70px 18px;
   }
 
-  .love-footer h2 {
-    font-size: 24px;
-  }
-
   .love-footer p {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .footer-heart {
@@ -4822,14 +5163,162 @@ window.addEventListener("load", () => {
   }
 
 }
-     
 <\style>
 
-<a class="nav" href="#top">Back To Beginning ↑</a>
+</head>
 
 <body id="top">
 
-    
-    
+  <!-- YOUR HERO / WELCOME SECTION -->
+
+  <!-- CHAPTER 1 -->
+  <!-- CHAPTER 2 -->
+  <!-- ... -->
+  <!-- CHAPTER 199 -->
+
+  <!-- CHAPTER 200 -->
+  <!-- Your Chapter 200 code here -->
+
+  <!-- ================= FINAL SECTION ================= -->
+
+  <footer class="love-footer">
+
+    <div class="footer-heart">♡</div>
+
+    <h2>200 Chapters. One Beautiful Story. ❤️</h2>
+
+    <p>
+      Some stories are written with ink.
+      <br>
+      Some are written with memories.
+      <br>
+      And some are simply written from the heart.
+    </p>
+
+    <button
+      class="replay-btn"
+      onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+      ↺ Read From The Beginning
+    </button>
+
+  </footer>
+
+  <!-- ================= FLOATING HEARTS ================= -->
+
+  <div class="floating-hearts" aria-hidden="true">
+    <span>♡</span>
+    <span>♥</span>
+    <span>♡</span>
+    <span>♥</span>
+    <span>♡</span>
+    <span>♥</span>
+    <span>♡</span>
+    <span>♥</span>
+  </div>
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script>
+
+    /* Chapter reveal animation */
+
+    const chapters = document.querySelectorAll(".chapter");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+    chapters.forEach((chapter) => {
+      observer.observe(chapter);
+    });
 
 
+    /* Click heart effect */
+
+    document.addEventListener("click", function(event) {
+
+      const heart = document.createElement("span");
+
+      heart.className = "click-heart";
+      heart.innerHTML = "♥";
+
+      heart.style.left = event.clientX + "px";
+      heart.style.top = event.clientY + "px";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 1200);
+
+    });
+
+
+    /* Smooth navigation */
+
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+
+      link.addEventListener("click", function(event) {
+
+        const target = document.querySelector(
+          this.getAttribute("href")
+        );
+
+        if (target) {
+
+          event.preventDefault();
+
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+
+      });
+
+    });
+
+
+    /* Reading progress */
+
+    const progress = document.createElement("div");
+
+    progress.className = "reading-progress";
+
+    document.body.appendChild(progress);
+
+    window.addEventListener("scroll", () => {
+
+      const scrollTop = window.scrollY;
+
+      const documentHeight =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+      const percentage =
+        documentHeight > 0
+          ? (scrollTop / documentHeight) * 100
+          : 0;
+
+      progress.style.width = percentage + "%";
+
+    });
+
+  </script>
+
+</body>
+</html>
