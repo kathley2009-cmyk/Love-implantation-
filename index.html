@@ -5350,7 +5350,86 @@ body {
   <script>
     /* PASTE YOUR JS HERE */
   </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+  const chapters = document.querySelectorAll(".chapter");
+
+  const observer = new IntersectionObserver(
+    function (entries) {
+
+      entries.forEach(function (entry) {
+
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+
+      });
+
+    },
+    {
+      threshold: 0.12
+    }
+  );
+
+  chapters.forEach(function (chapter) {
+    observer.observe(chapter);
+  });
+
+
+  /* Click hearts */
+
+  document.addEventListener("click", function (event) {
+
+    const heart = document.createElement("span");
+
+    heart.className = "click-heart";
+    heart.textContent = "♥";
+
+    heart.style.left = event.clientX + "px";
+    heart.style.top = event.clientY + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function () {
+      heart.remove();
+    }, 1200);
+
+  });
+
+
+  /* Reading progress */
+
+  const progress = document.createElement("div");
+
+  progress.className = "reading-progress";
+
+  document.body.appendChild(progress);
+
+  window.addEventListener("scroll", function () {
+
+    const scrollTop = window.scrollY;
+
+    const documentHeight =
+      document.documentElement.scrollHeight -
+      window.innerHeight;
+
+    if (documentHeight > 0) {
+
+      const percentage =
+        (scrollTop / documentHeight) * 100;
+
+      progress.style.width = percentage + "%";
+
+    }
+
+  });
+
+});
+</script>
+
+</body>
+</html>
 </body>
 </html>
 
